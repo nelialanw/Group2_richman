@@ -1,4 +1,8 @@
 # Group2_richman
+#### Team Members:
+Li Chi Shing (nelialanw) u3571237@connect.hku.hk
+Wong Wing Lam (WongWingLam) u3568502@connect.hku.hk
+## Game Discription
 This is a text-based game similar to Monopoly and we called it Richman.
 Richman is single/multiple players game that can be played on command-line interface.
 Here's the flow of the game.
@@ -14,3 +18,4 @@ Here's the flow of the game.
 3.5 Hospital: Destiny card's penalty which keeps the participants in there and skips their chance from rolling dice. Participants resume playing from the Hospital.
 3.6 Prison: Same as Hospital.
 3.7 Car Park: For damaged car?
+## Features/Functions
