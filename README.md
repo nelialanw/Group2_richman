@@ -1,6 +1,6 @@
 # Group2_richman
 #### Team Members:
-Li Chi Shing (nelialanw) u3571237@connect.hku.hk
+Li Chi Shing (nelialanw) u3571237@connect.hku.hk<br>
 Wong Wing Lam (WongWingLam) u3568502@connect.hku.hk
 ## Game Discription
 This is a text-based game similar to Monopoly and we called it Richman.
