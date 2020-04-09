@@ -5,17 +5,38 @@ Wong Wing Lam (WongWingLam) u3568502@connect.hku.hk
 ## Game Discription
 This is a text-based game similar to Monopoly and we called it Richman.
 Richman is single/multiple players game that can be played on command-line interface.
-Here's the flow of the game.
-1. Executing the compiled cpp of the game.
-2. Select the game's mode i.e. Single or Double, Difficulties,etc.
-2.1 Single is offline module while double is online module?
-2.2 Difficulties: Easy/ Medium/ Hard; main difference will be the initial fund that the player has and if the inflation factors are activated.
-3. Game starts
-3.1 Players and computers (in total 4 participants) were represented by their chesses and placed in a squared path with the same starting point which also represents the end of a loop. In each round, participants roll dice (1 per each time) sequentially and the chess steps with the dice's number clockwisely. There are 10 steps each side with 4 corners (in total 44 steps as one loop). Each corner represents a public facility including 1. Starting point, 2. Hospital, 3. Prison, 4. Car Park while each step represents either property, chance or destiny. Participant who first stepped on the property step has the authority to purchase the property and become the owner depending on the wealthiness of the participant and price of the property. The last partcipant who remains in the game and didn't bankrupt will win.
-3.2 Chance: Participant who stepped on the Chance step will draw a chance card randomly from the chance library which stored with some different chances that are beneficial to the particpants. Chance library will be reset once the last chance card is drawn.
-3.3 Destiny: Participant who stepped on the Destiny step will draw a destiny card randomly from the destiny library which stored with some different destiny that are destructive to the particpants' wealth or chances to win. Destiny library will be reset once the last destiny card is drawn.
-3.4 Starting point: Partcipants who finished a loop and stepped on/ passed through the starting point will get a starting fund from the central bank.
-3.5 Hospital: Destiny card's penalty which keeps the participants in there and skips their chance from rolling dice. Participants resume playing from the Hospital.
-3.6 Prison: Same as Hospital.
-3.7 Car Park: For damaged car?
+Here's the basic rules of the game.
+### Game Mode
+1. Single mode: player vs 3 AIs
+2. Multiplayer mode: 2-4 players 
+### Game Flow
+Players / computers were represented by their chesses and placed in a squared path with the same starting point which also represents the end of a loop. Each of them will have an initial cash of $100000. In each round, participants roll dice (1 per each time) sequentially and the chess steps with the dice's number clockwisely. There are many opportunities for the participants to earn/lose money during their journey in the map. Participlants whose total assests drop to 0 will bankrupt. In the end, the last partcipant who remains in the game and didn't bankrupt will win. 
+### Map Setting
+There are 10 steps each side with 4 corners (in total 44 steps as one loop). Each corner represents a public facility including 1. Starting point, 2. Hospital, 3. Prison, 4. Alan Water&Electricity Ltd. while each step represents either property, chance/destiny,Chi Shing Store<br>
+* **Property**
+<br>participant who first stepped on the property step has the authority to purchase the property and become the owner depending on their cash and price of the property. Other participants have to pay rent to the owner when they step into other's property. Owner of the property can invest and upgrade it in order to receive more rent when he steps into the property again
+* **Chance/Destiny** 
+<br>Participant who stepped on the Chance/Destiny step will draw a chance/destiny card randomly from the library which stored with some different chances/destinies that are beneficial/destructive to the particpants. 
+* **Hospital**
+<br>Participants may get into hospital due to different events and skips their chance from rolling dice for 1-3 rounds. Participants resume playing from the Hospital.
+* **Prison**
+<br>Same as Hospital.
+* **Alan Water&Electricity Ltd.**
+<br>Participants have to pay money base on the number of property they owns
+* **Chi Shing Store**
+<br>Participants can buy some special tools when they stepped in
+### Special Tools
+Pariticipants can use special tools in their round before rolling the dice. Special tools have several effects such as control the dice in their round, shoot a missile to a player in order to send him to the hospital
+### Centre Bank Service
+Pariticipants can use centre bank service in their round before rolling dice. There are 2 services,
+* **Loan**
+<br>Borrow a maximum of $100000 cash, and have to return part of the loan with interset when passing through the starting point
+* **Mortgage**
+<br>Mortgage their properties in order to get cash, the moetgaged properties cannot charge rent from other players before unmortgage, properties can be unmortgaged when passing through starting point
 ## Features/Functions
+### Dice Rolling
+Roll a dice in range of 1-6 randomly
+### Event Triger
+### Status Storing
+### Save/Load Game
+### Daynamic Memory Management
