@@ -34,9 +34,19 @@ Pariticipants can use centre bank service in their round before rolling dice. Th
 * **Mortgage**
 <br>Mortgage their properties in order to get cash, the moetgaged properties cannot charge rent from other players before unmortgage, properties can be unmortgaged when passing through starting point
 ## Features/Functions
-### Dice Rolling
-Roll a dice in range of 1-6 randomly
-### Event Triger
-### Status Storing
-### Save/Load Game
-### Daynamic Memory Management
+### Dice rolling
+Roll a dice in range of 1-6 randomly and return the number
+### Event triger
+Event and its effect will be store in csv file, and will be randomly drew and triger the effect when player stepped in the Chance/Destiny 
+### Status storing
+Using structures to store the game status (i.e. name/cash of each players, property ownerships, etc)
+### Saving/Loading game
+Game status (i.e. name/cash of each players, property ownerships, etc) will outout to csv files when using safe function in the game, and can input the file before game start in order to load the pervious game
+### Rent/Interest calculation
+Calculate the rent/ interest need to pay by the player
+### Display
+Display the map and the corresponding position of the players
+### Program codes in multiple files
+Functions will be codes in multiple files for collaboration
+### Daynamic memory management
+Variables will daynamically allocate memory if nacessary 
