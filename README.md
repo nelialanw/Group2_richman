@@ -12,7 +12,7 @@ Here's the basic rules of the game.
 ### Game Flow
 Players / computers were represented by their chesses and placed in a squared path with the same starting point which also represents the end of a loop. Each of them will have an initial cash of $100000. In each round, participants roll dice (1 per each time) sequentially and the chess steps with the dice's number clockwisely. There are many opportunities for the participants to earn/lose money during their journey in the map. Participlants whose total assests drop to 0 will bankrupt. In the end, the last partcipant who remains in the game and didn't bankrupt will win. 
 ### Map Setting
-There are 10 steps each side with 4 corners (in total 44 steps as one loop). Each corner represents a public facility including 1. Starting point, 2. Hospital, 3. Prison, 4. Alan Water&Electricity Ltd. while each step represents either property, chance/destiny, Chi Shing Store<br>
+There are 10 steps each side with 4 corners (in total 44 steps as one loop). Each corner represents a public facility including 1. Starting point, 2. Hospital, 3. Prison, 4. Winglam Water&Electricity Ltd. while each step represents either property, chance/destiny, Chi Shing Store<br>
 * **Property**
 <br>participant who first stepped on the property step has the authority to purchase the property and become the owner depending on their cash and price of the property. Other participants have to pay rent to the owner when they step into other's property. Owner of the property can invest and upgrade it in order to receive more rent when he steps into the property again
 * **Chance/Destiny** 
