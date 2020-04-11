@@ -5,16 +5,16 @@ Wong Wing Lam (WongWingLam) u3568502@connect.hku.hk
 ## Game Discription
 This is a text-based game similar to Monopoly and we called it Richman.
 Richman is single/multiple players game that can be played on command-line interface.
-Here's the basic rules of the game.
+Here's the basic rules of the game:
 ### Game Mode
 1. Single mode: 1 player vs 3 AIs
 2. Multiplayer mode: 2-4 players 
 ### Game Flow
-Players / computers were represented by their chesses and placed in a squared path with the same starting point which also represents the end of a loop. Each of them will have an initial cash of $100000(Easy)/50000(Medium)/10000(Hard). In each round, participants roll dice (1 per each time) sequentially and the chess steps with the dice's number clockwisely. There are many opportunities for the participants to earn/lose money during their journey in the map. Participlants whose total assests drop to or below 0 will bankrupt. In the end, the last partcipant who remains in the game and didn't bankrupt will win. If the player(s) get bankrupted before AI, the game ends and annouces "Player loses".
+Players / computers were represented by their chesses and placed in a squared path with the same starting point which also represents the end of a loop. Each of them will have an initial cash of $100000(Easy)/50000(Medium)/10000(Hard). In each round, participants roll dice (1 per each time) sequentially and the chess steps with the dice's number clockwisely. There are many opportunities for the participants to earn/lose money during their journey in the map. Participlants whose total assests drop to or below 0 will bankrupt. In the end, the last partcipant who remains in the game and didn't bankrupt will win. If the player(s) get bankrupted before AI, the game ends and annouces "Player lost".
 ### Map Setting
 There are 10 steps each side with 4 corners (in total 44 steps as one loop). Each corner represents a public facility including 1. Starting point, 2. Hospital, 3. Prison and 4. Winglam Highway Exist, while each step represents either property, chance, destiny, Winglam Highway Entrance or Chi Shing Store.<br>
 * **Property**
-<br>participant who first stepped on the property step has the authority to purchase the property and become the owner depending on their cash and price of the property. Other participants have to pay rent to the owner when they stepped into other's property. Owner of the property can invest and upgrade it in order to receive more rent when he steps into the property again
+<br>participant who first stepped on the property step has the authority to purchase the property and become the owner depending on their cash and price of the property. Other participants have to pay rent to the owner when they stepped into other's property. Owner of the property can invest and upgrade it in order to receive more rent when he steps into the property again.
 * **Chance/Destiny** 
 <br>Participant who stepped on the Chance/Destiny step will draw a chance/destiny card randomly from the library which stored with some different chances/destinies that are beneficial/destructive to the particpants. 
 * **Hospital**
@@ -37,13 +37,21 @@ Pariticipants can use centre bank service in their round before rolling dice. Th
 <br>Mortgage their properties in order to get cash, the mortgaged properties cannot charge rent from other players before unmortgaged, properties can be unmortgaged when the owner passes through starting point.
 ## Features/Functions
 ### Dice rolling
-Roll a dice in range of 1-6 randomly and return the number.
-### Event triger
-Event and its effect will be store in csv file, and will be randomly drew and triger the effect when player stepped in the Chance/Destiny 
-### Status storing
-Using structures to store the game status (i.e. name/cash of each players, property ownerships, etc)
-### Saving/Loading game
-Game status (i.e. name/cash of each players, property ownerships, etc) will outout to csv files when using safe function in the game, and can input the file before game start in order to load the pervious game
+A function returns the number of steps in range of 1-6 randomly.
+### Event trigger
+Event and its effect will be stored in .txt file, and will be randomly drew and trigger the effect when player stepped into the Chance/Destiny.
+Events in Macro-environment (feature): After 5 complete rounds of rolling dice, random events will happen to affect the macro-environment. For instance, earthquarkes to destroy the buildings, inflation to increase the price for everything, etc.
+Chance header: Stores the list of chances and effects (function) of Chance.
+Destiny header: Stores the list of Destinies and effects (function) of Destiny.
+### Status storing 
+Using structures to store the game status (i.e. name/cash of each players, property ownerships, etc).
+Two types of variables to store players' status:
+#### Static
+Information like name, cash, position in map, rolling rounds in the game, sequence of rolling dice, etc, will be stored in a static array which are necessary information of each player.
+#### Dynamic
+Information like Property ownership, special tools ownership, etc. will be stored in dynamic arrays.
+### Saving/Loading game (File I/O)
+Game status (i.e. name/cash of each players, property ownerships, etc) will outout to .txt files when using safe function in the game, and can input the file before game start in order to load the pervious game
 ### Rent/Interest calculation
 Calculate the rent/ interest need to pay by the player
 ### Display
