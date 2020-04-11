@@ -51,12 +51,18 @@ Information like name, cash, position in map, rolling rounds in the game, sequen
 #### Dynamic
 Information like Property ownership, special tools ownership, etc. will be stored in dynamic arrays.
 ### Saving/Loading game (File I/O)
-Game status (i.e. name/cash of each players, property ownerships, etc) will outout to .txt files when using safe function in the game, and can input the file before game start in order to load the pervious game
-### Rent/Interest calculation
-Calculate the rent/ interest need to pay by the player
+Game status (i.e. name/cash of each players, property ownerships, etc) will outout to .txt files when using Save function (File out) in the game, and can load game status via Load function (File in) before game start.
+#### Save Function
+Save header used to access save function which calls the file output to location /Save_status/<user-input>.txt and display 3 fixed saving slots with the player-tailored name. Player can save into particular slot and over-write the original save file. 
+  Save function writes game's and players' statuses into a .txt file with specific format.
+#### Load Function
+Load header used to access load function which calls the file input and display 3 fixed saving slots. By choosing the saving slot, the load function returns game status to the game's main functoin.
+  Load function reads game's and players' statuses from a .txt file with specific format.
+### Rent/Interest calculation Function
+Calculate the rent/ interest need to pay by the player.
 ### Display
 Display the map and the corresponding position of the players
 ### Program codes in multiple files
 Functions will be codes in multiple files for collaboration
 ### Daynamic memory management
-Variables will daynamically allocate memory if nacessary 
+Variables will dynamically allocate memory if necessary 
