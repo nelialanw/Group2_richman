@@ -40,7 +40,7 @@ Pariticipants can use centre bank service in their round before rolling dice. Th
 A function returns the number of steps in range of 1-6 randomly.
 ### Event trigger
 Event and its effect will be stored in .txt file, and will be randomly drew and trigger the effect when player stepped into the Chance/Destiny.
-Events in Macro-environment (feature): After 5 complete rounds of rolling dice, random events will happen to affect the macro-environment. For instance, earthquarkes to destroy the buildings, inflation to increase the price for everything, etc.
+Events in Macro-environment (fFunction): After 5 complete rounds of rolling dice, random events will happen to affect the macro-environment. For instance, earthquarkes to destroy the buildings, inflation to increase the price for everything, etc.
 Chance header: Stores the list of chances and effects (function) of Chance.
 Destiny header: Stores the list of Destinies and effects (function) of Destiny.
 ### Status storing 
@@ -49,20 +49,20 @@ Two types of variables to store players' status:
 #### Static
 Information like name, cash, position in map, rolling rounds in the game, sequence of rolling dice, etc, will be stored in a static array which are necessary information of each player.
 #### Dynamic
-Information like Property ownership, special tools ownership, etc. will be stored in dynamic arrays.
+Information like Property ownership, special tools ownership, loan, etc. will be stored in dynamic arrays.
 ### Saving/Loading game (File I/O)
 Game status (i.e. name/cash of each players, property ownerships, etc) will outout to .txt files when using Save function (File out) in the game, and can load game status via Load function (File in) before game start.
 #### Save Function
 Save header used to access save function which calls the file output to location /Save_status/<user-input>.txt and display 3 fixed saving slots with the player-tailored name. Player can save into particular slot and over-write the original save file. 
-  Save function writes game's and players' statuses into a .txt file with specific format.
+<br>Save function writes game's and players' statuses into a .txt file with specific format.
 #### Load Function
 Load header used to access load function which calls the file input and display 3 fixed saving slots. By choosing the saving slot, the load function returns game status to the game's main functoin.
-  Load function reads game's and players' statuses from a .txt file with specific format.
+<br>Load function reads game's and players' statuses from a .txt file with specific format.
 ### Rent/Interest calculation Function
-Calculate the rent/ interest need to pay by the player.
+Calculate the rent/ interest need to be paid by the player and arrange the deduction for payer's assets and increment for owner's assets.
 ### Display
-Display the map and the corresponding position of the players
+Display the map, status of properties, and the corresponding position of the players
 ### Program codes in multiple files
-Functions will be codes in multiple files for collaboration
+Functions will be coded in multiple files for collaboration.
 ### Daynamic memory management
-Variables will dynamically allocate memory if necessary 
+Variables will dynamically allocate memory if necessary. (e.g. status storing)
