@@ -31,4 +31,5 @@ int save_richman(string players_status, string game_status)
   fout << player_status << endl;
   fout << game_status << endl;
   fout.close();
+  return 1;
 #endif
