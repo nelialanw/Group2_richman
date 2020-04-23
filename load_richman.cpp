@@ -1,8 +1,9 @@
-// load_richman.h
-#ifndef LOAD_RICHMAN_H
-#define LOAD_RICHMAN_H
-//#include <boost/filesystem.hpp>
-//using namespace boost::filesystem;
+// load_richman.cpp
+#include <iostream>
+#include <boost/filesystem.hpp>
+#include "load_richman.h"
+using namespace std;
+using namespace boost::filesystem;
 
 void load_richman()
   string slot_name;
@@ -32,4 +33,4 @@ void load_richman()
     //use linked_list, depends on main()'s format
   }
   fin.close();
-#endif
+}
