@@ -2,6 +2,6 @@
 #ifndef SAVE_RICHMAN_H
 #define SAVE_RICHMAN_H
 
-void load_richman();
+int save_richman(string players_status, string game_status);
 
 #endif
