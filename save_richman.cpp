@@ -1,8 +1,9 @@
-// save_richman.h
-#ifndef SAVE_RICHMAN_H
-#define SAVE_RICHMAN_H
-//#include <boost/filesystem.hpp>
-//using namespace boost::filesystem;
+// save_richman.cpp
+#include <iostream>
+#include <boost/filesystem.hpp>
+#include "save_richman.h"
+using namespace std;
+using namespace boost::filesystem;
 
 int save_richman(string players_status, string game_status)
   string slot_name;
@@ -32,4 +33,5 @@ int save_richman(string players_status, string game_status)
   fout << game_status << endl;
   fout.close();
   return 1;
-#endif
+} 
+               
