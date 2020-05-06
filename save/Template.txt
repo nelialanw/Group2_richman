@@ -34,7 +34,7 @@ WanChai 12000 1 Nil
 Admiralty 11000 1 Nil
 Central 18000 1 Nil
 HKU 17000 1 Nil
-P1 name 100000 0 0
-P2 name 100000 0 0
-P3 name 100000 0 0
-P4 name 100000 0 0
+name 100000 0 0
+name 100000 0 0
+name 100000 0 0
+name 100000 0 0
