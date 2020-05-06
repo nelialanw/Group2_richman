@@ -42,7 +42,7 @@ void load_richman(struct Block *mapBlocks, struct Status *players){
   if (players[0].name != ""){
     cin >> slot_name;
   }
-  else {slot_name = default;}
+  else {slot_name = "default";}
   ifstream fin("save/"+slot_name+".txt"); //change the cmd when the name of directory changed
   if (fin.fail()) {
     //the error message to notify failed opening; (1) for importing text
