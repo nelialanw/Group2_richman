@@ -5,11 +5,11 @@ struct Block{
   std::string name;
   double price;
   int Lv;
-  string ownership;
+  std::string ownership;
 };
 
 struct Status{
-  string name;
+  std::string name;
   int cash;
   int property;
   int position;
