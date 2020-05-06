@@ -1,7 +1,3 @@
-P1 100000 0
-P2 100000 0
-P3 100000 0
-P4 100000 0
 Start 100000
 Austin 7000 1 Nil
 NamCheong 7000 1 Nil
@@ -38,3 +34,7 @@ WanChai 12000 1 Nil
 Admiralty 11000 1 Nil
 Central 18000 1 Nil
 HKU 17000 1 Nil
+P1 name 100000 0 0
+P2 name 100000 0 0
+P3 name 100000 0 0
+P4 name 100000 0 0
