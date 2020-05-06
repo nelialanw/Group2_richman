@@ -1,7 +1,7 @@
-// load_richman.cpp
+// richMan_load.cpp
 #include <iostream>
 #include <fstream>
-#include "load_richman.h"
+#include "richMan_load.h"
 #include <cstdlib>
 #include <string>
 #include <sys/stat.h>
