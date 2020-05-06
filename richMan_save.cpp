@@ -1,15 +1,15 @@
-// save_richman.cpp
+// richMan_save.cpp
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
 #include <string>
 #include <sys/stat.h>
-#include "save_richman.h"
+#include "richMan_save.h"
 #include <dirent.h>
 
 using namespace std;
 
-void save_richman(string player_status){
+void richMan_save(string player_status){
   string slot_name;
   DIR *dir = opendir("save");
 
@@ -50,6 +50,6 @@ void save_richman(string player_status){
 }
 
 int main(){
-  save_richman("save");
+  richMan_save("save");
   return 0;
 }
