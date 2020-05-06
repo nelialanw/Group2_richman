@@ -37,8 +37,6 @@ void richMan_save(struct Block *mapBlocks, struct Status *players){
 
   cout << "Which slot do you want to overwrite? (Name of file)";
   cin >> slot_name;
-  string stringpath = "save";
-  //int status = mkdir(stringpath.c_str(),0777);
   ofstream fout("save/"+slot_name+".txt");
   if (fout.fail()) {
     //the error message to notify failed opening; (2) for exporting text
@@ -47,7 +45,7 @@ void richMan_save(struct Block *mapBlocks, struct Status *players){
   }
   int n = 0;
   for (int i=0; i<4; i++){
-    if (player[i] != NULL){n++;}
+    if (players[i].name != ""){n++;}
   }
   int j = 0;
   while (j < 36+n) {
@@ -58,8 +56,7 @@ void richMan_save(struct Block *mapBlocks, struct Status *players){
         << mapBlocks[j].ownership << endl;
     }
     else {
-      fout << "P" << j-36+1 << " " 
-        << players[j-36].name << " "
+      fout << players[j-36].name << " "
         << players[j-36].cash << " "
         << players[j-36].property << " "
         << players[j-36].position << endl;
@@ -67,9 +64,4 @@ void richMan_save(struct Block *mapBlocks, struct Status *players){
     j++
   }
   fout.close();
-}
-
-int main(){
-  richMan_save("save");
-  return 0;
 }
