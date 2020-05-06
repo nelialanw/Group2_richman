@@ -2,6 +2,6 @@
 #ifndef SAVE_RICHMAN_H
 #define SAVE_RICHMAN_H
 
-int save_richman(string players_status, string game_status);
+void save_richman(std::string player_status);
 
 #endif
