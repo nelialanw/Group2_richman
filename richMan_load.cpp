@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void load_richman(char *save){
+void load_richman(struct Block *mapBlocks, struct Status *players){
   string slot_name;
   //const char save[10] = "save";
   DIR *dir= opendir(save);
@@ -40,21 +40,33 @@ void load_richman(char *save){
   cin >> slot_name;
   string stringpath = "save";
   //int status = mkdir(stringpath.c_str(),0777);
-  string status;
+  string name;
   ifstream fin("save/"+slot_name+".txt"); //change the cmd when the name of directory changed
   if (fin.fail()) {
     //the error message to notify failed opening; (1) for importing text
     cout << "Error in the file opening!" << endl;
     exit(1);
   }
-  while (getline(fin, status)) {
-    cout << status << endl;
+  int j = 0;
+  while (fin >> name)) {
+    if (j < 36){
+      name = mapBlocks[j].name;
+      fin >> mapBlocks[j].price;
+      fin >> mapBlocks[j].Lv;
+      fin >> mapBlocks[j].ownership;
+    }
+    else {
+      name = players[j-36].name;
+      fin >> players[j-36].cash;
+      fin >> players[j-36].property;
+      fin >> players[j-36].position;
+    }
+    j++;
   }
   fin.close();
 }
 
 int main(){
-  char save[10] = "save";
-  load_richman(save);
+  load_richman(struct Block mapBlocks, struct Status players);
   return 0;
 }
