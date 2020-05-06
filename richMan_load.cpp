@@ -37,10 +37,12 @@ void load_richman(struct Block *mapBlocks, struct Status *players){
   closedir(dir);
 
   cout << "Which slot do you want to load? (Name of file)";
-  cin >> slot_name;
-  string stringpath = "save";
-  //int status = mkdir(stringpath.c_str(),0777);
+  string slot_name;
   string name;
+  if (players[0].name != ""){
+    cin >> slot_name;
+  }
+  else {slot_name = default;}
   ifstream fin("save/"+slot_name+".txt"); //change the cmd when the name of directory changed
   if (fin.fail()) {
     //the error message to notify failed opening; (1) for importing text
@@ -64,9 +66,4 @@ void load_richman(struct Block *mapBlocks, struct Status *players){
     j++;
   }
   fin.close();
-}
-
-int main(){
-  load_richman(struct Block mapBlocks, struct Status players);
-  return 0;
 }
