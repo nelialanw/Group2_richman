@@ -1,27 +1,27 @@
-Start 100000
+Start 100000 0 0
 Austin 7000 1 Nil
 NamCheong 7000 1 Nil
 TWWest 6000 1 Nil
 TuenMun 5000 1 Nil
-Chance
+Chance 0 0 0
 TSW 4500 1 Nil
 YuenLong 4800 1 Nil
 LongPing 4000 1 Nil
-Jail 2
+Jail 2 0 0
 Fanling 3800 1 Nil
 TaiWo 4800 1 Nil
 TaiPoMkt 5000 1 Nil
-Destiny
+Destiny 0 0 0
 ShaTin 7000 1 Nil
 TaiWai 6000 1 Nil
 MKEast 7500 1 Nil
 Hunghom 8000 1 Nil
-Hospital
+Hospital 0 0 0
 Whampoa 9000 1 Nil
 YauMaTei 7000 1 Nil
 LokFu 6500 1 Nil
 ChoiHung 6000 1 Nil
-Chance
+Chance 0 0 0
 LamTin 5500 1 Nil
 TKO 7000 1 Nil
 PoLam 6500 1 Nil
@@ -29,7 +29,7 @@ E.Harbour Crossing
 ChaiWan 9000 1 Nil
 TaiKoo 14000 1 Nil
 N.Point 10000 1 Nil
-Destiny
+Destiny 0 0 0
 WanChai 12000 1 Nil
 Admiralty 11000 1 Nil
 Central 18000 1 Nil
