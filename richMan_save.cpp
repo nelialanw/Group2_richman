@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void richMan_save(string player_status){
+void richMan_save(Block *mapBlocks, Players *players){
   string slot_name;
   DIR *dir = opendir("save");
 
@@ -38,14 +38,33 @@ void richMan_save(string player_status){
   cout << "Which slot do you want to overwrite? (Name of file)";
   cin >> slot_name;
   string stringpath = "save";
-  int status = mkdir(stringpath.c_str(),0777);
+  //int status = mkdir(stringpath.c_str(),0777);
   ofstream fout("save/"+slot_name+".txt");
   if (fout.fail()) {
     //the error message to notify failed opening; (2) for exporting text
     cout << "Error in the file opening!" << endl;
     exit(1);
   }
-  fout << player_status << endl;
+  int n = 0;
+  for (int i=0; i<4; i++){
+    if (player[i] != NULL){n++;}
+  }
+  int j = 0;
+  while (j < 36+n) {
+    if (j <36) {
+      fout << mapBlocks[j].name << " "
+        << mapBlocks[j].price << " "
+        << mapBlocks[j].Lv << " "
+        << mapBlocks[j].ownership << endl;
+    }
+    else {
+      fout << "P" << players[j-36].id << " "
+        << players[j-36].cash << " "
+        << players[j-36].property << " "
+        << players[j-36].pos << endl;
+    }
+    j++
+  }
   fout.close();
 }
 
