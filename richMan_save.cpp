@@ -58,10 +58,11 @@ void richMan_save(Block *mapBlocks, Status *players){
         << mapBlocks[j].ownership << endl;
     }
     else {
-      fout << "P" << players[j-36].id << " "
+      fout << "P" << j-36+1 << " " 
+        << players[j-36].name << " "
         << players[j-36].cash << " "
         << players[j-36].property << " "
-        << players[j-36].pos << endl;
+        << players[j-36].position << endl;
     }
     j++
   }
