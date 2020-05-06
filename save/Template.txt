@@ -25,7 +25,7 @@ Chance 0 0 0
 LamTin 5500 1 Nil
 TKO 7000 1 Nil
 PoLam 6500 1 Nil
-E.Harbour Crossing
+E.HarbourCrossing 0 0 0
 ChaiWan 9000 1 Nil
 TaiKoo 14000 1 Nil
 N.Point 10000 1 Nil
