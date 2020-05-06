@@ -10,9 +10,9 @@ Here's the basic rules of the game:
 1. Single mode: 1 player vs 3 AIs
 2. Multiplayer mode: 2-4 players 
 ### Game Flow
-Players / computers were represented by their chesses and placed in a squared path with the same starting point which also represents the end of a loop. Each of them will have an initial cash of $100000(Easy)/50000(Medium)/10000(Hard). In each round, participants roll dice (1 per each time) sequentially and the chess steps with the dice's number clockwisely. There are many opportunities for the participants to earn/lose money during their journey in the map. Participlants whose total assests drop to or below 0 will bankrupt. In the end, the last partcipant who remains in the game and didn't bankrupt will win. If the player(s) get bankrupted before AI, the game ends and annouces "Player lost".
+Players / computers were represented by their chesses and placed in a squared path with the same starting point which also represents the end of a loop. Each of them will have an initial cash of $100000. In each round, participants roll dice (1 per each time) sequentially and the chess steps with the dice's number clockwisely. There are many opportunities for the participants to earn/lose money during their journey in the map. Participlants whose total assests drop to or below 0 will bankrupt. In the end, the last partcipant who remains in the game and didn't bankrupt will win. If the player(s) get bankrupted before AI, the game ends and annouces "Player lost".
 ### Map Setting
-There are 10 steps each side with 4 corners (in total 44 steps as one loop). Each corner represents a public facility including 1. Starting point, 2. Hospital, 3. Prison and 4. Winglam Highway Exist, while each step represents either property, chance, destiny, Winglam Highway Entrance or Chi Shing Store.<br>
+There are 10 steps each side with 4 corners (in total 40 steps as one loop). Each corner represents a public facility including 1. Starting point, 2. Hospital, 3. Prison and 4. E.Harbour Crossing, while each step represents either property, chance, destiny.
 * **Property**
 <br>participant who first stepped on the property step has the authority to purchase the property and become the owner depending on their cash and price of the property. Other participants have to pay rent to the owner when they stepped into other's property. Owner of the property can invest and upgrade it in order to receive more rent when he steps into the property again.
 * **Chance/Destiny** 
@@ -21,20 +21,6 @@ There are 10 steps each side with 4 corners (in total 44 steps as one loop). Eac
 <br>Participants may get into hospital due to different events and skips them from rolling dice for 1-3 rounds. Participants resume playing from the Hospital.
 * **Prison**
 <br>Same as Hospital.
-* **Winglam Highway Exist**
-<br>Participants' chess will move to the third corner if they stepped into the Highway Entrance.
-* **Alan Water&Electricity Ltd.**
-<br>One of the properties can be purchased. Participants have to pay money to the owner based on the number of property they owned.
-* **Chi Shing Store**
-<br>Participants can buy some special tools when they stepped in.
-### Special Tools
-Pariticipants can use special tools in their round before rolling the dice. Special tools have several effects such as control the dice in their round, shoot a missile to a player in order to send him to the hospital, double the number of steps of their dice, etc.
-### Centre Bank Service
-Pariticipants can use centre bank service in their round before rolling dice. There are 2 services:
-* **Loan**
-<br>Borrow a maximum of $100000 cash, and have to return part of the loan with interest when passing through the starting point;
-* **Mortgage**
-<br>Mortgage their properties in order to get cash, the mortgaged properties cannot charge rent from other players before unmortgaged, properties can be unmortgaged when the owner passes through starting point.
 ## Features/Functions
 ### Dice rolling
 A function returns the number of steps in range of 1-6 randomly.
