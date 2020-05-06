@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void richMan_save(Block *mapBlocks, Status *players){
+void richMan_save(struct Block *mapBlocks, struct Status *players){
   string slot_name;
   DIR *dir = opendir("save");
 
