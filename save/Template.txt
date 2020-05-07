@@ -33,8 +33,8 @@ Destiny 0 0 999
 WanChai 12000 1 -1
 Admiralty 11000 1 -1
 Central 18000 1 -1
-HKU 17000 1 -1
+HKU 17000 1 -1 4
 name 100000 0 0
 name 100000 0 0
 name 100000 0 0
-name 100000 0 0
+name 100000 0 0 
