@@ -9,7 +9,8 @@
 //#include <load_richman.h>
 //#include <save_richman.h>
 #include "richMan_display.h"
-#include "richMan_struct.h"
+//#include "richMan_struct.h"
+#include "richMan_mapEffect.h"
 
 using namespace std;
 
@@ -23,7 +24,8 @@ int dice();
 int main(){
   int choice;
   bool endGame = false;
-  Block *mapBlocks = new Block[36];
+  int n;
+  Block *mapBlocks = new Block[n];
   Status *players;
 
   //display the main menu of the game
@@ -49,7 +51,7 @@ int main(){
   while (!endGame)
   {
     static int round = 0, turn = 0, choice;
-
+    cout << players[turn].cash << endl;
     /*for (int i = 0; i < 36; i++)
     {
       cout << mapBlocks[i].name << ' ' << mapBlocks[i].price << ' ' << mapBlocks[i].Lv << ' ' << mapBlocks[i].ownership << endl;
@@ -64,11 +66,13 @@ int main(){
 
     if (choice == 1)
     {
-      players[turn].position += dice();
-      //mapEffect(turn, players, mapBlocks);
+      int diceNo = dice();
+      players[turn].position += diceNo;
+      mapEffect(diceNo, turn, mapBlocks, players, playerNo);
       if (players[turn].position > 35)
         players[turn].position %= 36;
     }
+
 
     system("CLS");
 
