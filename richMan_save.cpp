@@ -6,6 +6,7 @@
 #include <sys/stat.h>
 #include "richMan_save.h"
 #include <dirent.h>
+#include "richMan_struct.h"
 
 using namespace std;
 
