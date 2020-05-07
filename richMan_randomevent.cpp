@@ -12,7 +12,7 @@
 
 using namespace std;
 
-void random_event(string event, struct Status *players, int player_code) 
+void random_event(string event, struct Status *players, int player_code)
 {
   string result;
   int random_number, i=0;
@@ -54,6 +54,7 @@ void random_event(string event, struct Status *players, int player_code)
     }
     getline(fin,temp);
     cout << temp << endl;
+    getline(fin,temp);
     cout << temp << endl;
   }
   fin.close();
