@@ -16,13 +16,18 @@ void displayMap(Block *mapBlocks, Status *players, int playerNo){
     cout << endl;
     for (int i = 0; i < 10; i++)
     {
-      cout << '|' << setfill(' ') << setw(13) << left << mapBlocks[i+j*(j*27-i*2)].name << '|';
+      if (i+j*(j*27-i*2) == 27)
+        cout << '|' << setfill(' ') << setw(13) << left << mapBlocks[i+j*(j*27-i*2)].name.substr(0,9) << '|';
+      else
+        cout << '|' << setfill(' ') << setw(13) << left << mapBlocks[i+j*(j*27-i*2)].name << '|';
     }
     cout << endl;
     for (int i = 0; i < 10; i++)
     {
       if (mapBlocks[i+j*(j*27-i*2)].price != 0)
         cout << "|price: " << setfill(' ') << setw(6) << left << mapBlocks[i+j*(j*27-i*2)].price << '|';
+      else if (i+j*(j*27-i*2) == 27)
+        cout << '|' << setfill(' ') << setw(13) << left << mapBlocks[i+j*(j*27-i*2)].name.substr(9,8) << '|';
       else
         cout << '|' << setfill(' ') << setw(13) << ' ' << '|';
     }
