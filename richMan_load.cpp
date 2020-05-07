@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void richMan_load(struct Block *mapBlocks, struct Status *&players, int &playerNo){
+void richMan_load(struct Block *mapBlocks, struct Status *&players, int &playerNo, int round, int turn){
   string slot_name;
   char save[10] = "save";
   DIR *dir= opendir(save);
@@ -57,13 +57,17 @@ void richMan_load(struct Block *mapBlocks, struct Status *&players, int &playerN
         players = new Status[playerNo];
       }
     }
-    else {
+    else if (j > 35 && j < 36 + playerNo) {
       fin >> playerNo;
       players = new Status[playerNo];
       players[j-36].name = name;
       fin >> players[j-36].cash;
       fin >> players[j-36].property;
       fin >> players[j-36].position;
+    }
+    else {
+      fin >> round;
+      fin >> turn;
     }
     j++;
   }
