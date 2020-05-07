@@ -12,7 +12,7 @@ using namespace std;
 
 void richMan_load(struct Block *mapBlocks, struct Status *players){
   string slot_name;
-  //const char save[10] = "save";
+  char save[10] = "save";
   DIR *dir= opendir(save);
 
   struct dirent *entry;
@@ -23,22 +23,17 @@ void richMan_load(struct Block *mapBlocks, struct Status *players){
     return;
   }
   entry = readdir(dir);
-//(entry = readdir(dir)) != NULL
   while ((entry = readdir(dir)) != NULL ){
     if ( entry->d_name[0] != '.'){
       string name = string(entry->d_name);
       name = name.erase(name.find(".txt"), 4);
       cout << name << endl;
       stat(name.c_str(), &info);
-          /*if (S_ISDIR(info.st_mode)) {
-            load_richman(save);
-          }*/
     }
   }
   closedir(dir);
 
   cout << "Which slot do you want to load? (Name of file)";
-  string slot_name;
   string name;
   if (players[0].name != ""){
     cin >> slot_name;
@@ -51,7 +46,7 @@ void richMan_load(struct Block *mapBlocks, struct Status *players){
     exit(1);
   }
   int j = 0;
-  while (fin >> name)) {
+  while (fin >> name) {
     if (j < 36){
       name = mapBlocks[j].name;
       fin >> mapBlocks[j].price;
