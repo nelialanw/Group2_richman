@@ -7,6 +7,7 @@
 #include <sys/stat.h>
 #include "richMan_struct.h"
 #include "richMan_load.h"
+#include "richMan_randomevent.h"
 
 
 using namespace std;
