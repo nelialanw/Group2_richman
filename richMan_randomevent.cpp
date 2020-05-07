@@ -45,7 +45,12 @@ void random_event(string event, struct Status *players, int player_code)
       players[player_code].cash += read_num;
     }
     fin >> read_num;
-    players[player_code].position += read_num;
+    if (j < 2) {
+      players[player_code].position = read_num;
+    }
+    else {
+      players[player_code].position += read_num;
+    }
     getline(fin,temp);
     cout << temp << endl;
   }
