@@ -48,13 +48,13 @@ void richMan_load(struct Block *mapBlocks, struct Status *players){
   int j = 0;
   while (fin >> name) {
     if (j < 36){
-      name = mapBlocks[j].name;
+      mapBlocks[j].name = name;
       fin >> mapBlocks[j].price;
       fin >> mapBlocks[j].Lv;
       fin >> mapBlocks[j].ownership;
     }
     else {
-      name = players[j-36].name;
+      players[j-36].name = name;
       fin >> players[j-36].cash;
       fin >> players[j-36].property;
       fin >> players[j-36].position;
