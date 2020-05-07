@@ -12,6 +12,7 @@
 #include "richMan_display.h"
 //#include "richMan_struct.h"
 #include "richMan_mapEffect.h"
+#include "richMan_randomevent.h"
 
 using namespace std;
 
@@ -25,7 +26,7 @@ int dice();
 int main(){
   int choice;
   bool endGame = false;
-  int n = 36;
+  int n = 36, round = 0, turn = 0;
   Block *mapBlocks = new Block[n];
   Status *players;
 
@@ -38,7 +39,7 @@ int main(){
       createMap("save/default.txt", mapBlocks);//select single/multi game mode, create new Players and map
       break;
     case 2:
-      richMan_load(mapBlocks, players, playerNo);
+      richMan_load(mapBlocks, players, playerNo, round, turn);
       break;
     case 3:
       //display the game rules
@@ -51,7 +52,7 @@ int main(){
 
   while (!endGame)
   {
-    static int round = 0, turn = 0, choice;
+    static int choice;
     cout << players[turn].cash << endl;
 
     displayMap(mapBlocks, players, playerNo);
@@ -75,8 +76,12 @@ int main(){
       richMan_save(mapBlocks, players, playerNo, round, turn);
     }
 
+    if (choice == 5)
+    {
+      random_event("chance", players, 0);
+    }
 
-    system("CLS");
+    //system("CLS");
 
     turn++;
     if (turn%playerNo == 0)
