@@ -35,10 +35,7 @@ void richMan_load(struct Block *mapBlocks, struct Status *&players, int &playerN
 
   cout << "Which slot do you want to load? (Name of file)";
   string name;
-  if (players[0].name != ""){
-    cin >> slot_name;
-  }
-  else {slot_name = "default";}
+  cin >> slot_name;
   ifstream fin("save/"+slot_name+".txt"); //change the cmd when the name of directory changed
   if (fin.fail()) {
     //the error message to notify failed opening; (1) for importing text
