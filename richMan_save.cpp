@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void richMan_save(Block *mapBlocks, Status *players, int n){
+void richMan_save(Block *mapBlocks, Status *players, int n, int round, int turn){
   string slot_name;
   DIR *dir = opendir("save");
 
@@ -46,7 +46,7 @@ void richMan_save(Block *mapBlocks, Status *players, int n){
   }
 
   int j = 0;
-  while (j < 36+n) {
+  while (j < 36+n+1) {
     if (j <36) {
       fout << mapBlocks[j].name << " "
         << mapBlocks[j].price << " "
@@ -57,11 +57,14 @@ void richMan_save(Block *mapBlocks, Status *players, int n){
       }
       fout << endl;
     }
-    else {
+    else if (j > 35 && j < 36+n) {
       fout << players[j-36].name << " "
         << players[j-36].cash << " "
         << players[j-36].property << " "
         << players[j-36].position << endl;
+    }
+    else {
+      fout << round << " " << turn << endl;
     }
     j++;
   }
