@@ -1,22 +1,12 @@
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <iomanip>
+#include "richMan_display.h"
+#include "richMan_struct.h"
 
 using namespace std;
 
-/*struct Block{
-  string name;
-  double price;
-  int Lv;
-  string player[4];
-  int ownership;
-};*/
-
-//Block mapBlocks[36];
-//const int blockCols = 17;
-//const int blockRows = 6;
-
-void displayMap(Block *mapBlocks){
+void displayMap(Block *mapBlocks, Status *players, int playerNo){
   for (int j = 0; j < 2; j++)
   {
     for (int i = 0; i < 10; i++)
@@ -26,13 +16,13 @@ void displayMap(Block *mapBlocks){
     cout << endl;
     for (int i = 0; i < 10; i++)
     {
-      cout << '|' << setfill(' ') << setw(13) << left << mapBlocks[i+(j*27-i*2)].name << '|';
+      cout << '|' << setfill(' ') << setw(13) << left << mapBlocks[i+j*(j*27-i*2)].name << '|';
     }
     cout << endl;
     for (int i = 0; i < 10; i++)
     {
       if (mapBlocks[0].price != 0)
-        cout << "|price: " << setfill(' ') << setw(6) << left << mapBlocks[i+(j*27-i*2)].price << '|';
+        cout << "|price: " << setfill(' ') << setw(6) << left << mapBlocks[i+j*(j*27-i*2)].price << '|';
       else
         cout << '|' << setfill(' ') << setw(13) << ' ' << '|';
     }
@@ -40,19 +30,33 @@ void displayMap(Block *mapBlocks){
     for (int i = 0; i < 10; i++)
     {
       if (mapBlocks[0].Lv != 0)
-        cout << "|Lv: " << setfill(' ') << setw(9) << left << mapBlocks[i+(j*27-i*2)].Lv << '|';
+        cout << "|Lv: " << setfill(' ') << setw(9) << left << mapBlocks[i+j*(j*27-i*2)].Lv << '|';
       else
         cout << '|' << setfill(' ') << setw(13) << ' ' << '|';
     }
     cout << endl;
     for (int i = 0; i < 10; i++)
     {
-      cout << '|' << setfill(' ') << setw(13) << left << mapBlocks[i+(j*27-i*2)].player[0] + ' ' + mapBlocks[i+(j*27-i*2)].player[1] << '|';
+      if (players[0].position == i+j*(j*27-i*2))
+        cout << '|' << setfill(' ') << setw(6) << left << players[0].name << ' ';
+      else
+        cout << "|       ";
+      if (players[1].position == i+j*(j*27-i*2))
+        cout << setfill(' ') << setw(6) << left << players[1].name << '|';
+      else
+        cout << "      |";
     }
     cout << endl;
     for (int i = 0; i < 10; i++)
     {
-      cout << '|' << setfill(' ') << setw(13) << left << mapBlocks[i+(j*27-i*2)].player[2] + ' ' + mapBlocks[i+(j*27-i*2)].player[3] << '|';
+      if (playerNo > 2 && players[2].position == i+j*(j*27-i*2))
+        cout << '|' << setfill(' ') << setw(6) << left << players[2].name << ' ';
+      else
+        cout << "|       ";
+      if (playerNo > 3 && players[3].position == i+j*(j*27-i*2))
+        cout << setfill(' ') << setw(6) << left << players[3].name << '|';
+      else
+        cout << "      |";
     }
     cout << endl;
     for (int i = 0; i < 10; i++)
@@ -70,30 +74,44 @@ void displayMap(Block *mapBlocks){
       cout << '|' << setfill(' ') << setw(13) << left << mapBlocks[35-i].name << '|' << setfill(' ') << setw(120) << ' '
       << '|' << setfill(' ') << setw(13) << left << mapBlocks[10+i].name << '|' <<endl;
 
-      if (mapBlocks[0].price != 0)
+      if (mapBlocks[35-i].price != 0)
         cout << "|price: " << setfill(' ') << setw(6) << left << mapBlocks[35-i].price << '|';
       else
         cout << '|' << setfill(' ') << setw(13) << ' ' << '|';
       cout << setfill(' ') << setw(120) << ' ';
-      if (mapBlocks[0].price != 0)
+      if (mapBlocks[10+i].price != 0)
         cout << "|price: " << setfill(' ') << setw(6) << left << mapBlocks[10+i].price << '|' << endl;
       else
         cout << '|' << setfill(' ') << setw(13) << ' ' << '|' << endl;
 
-      if (mapBlocks[0].Lv != 0)
+      if (mapBlocks[35-i].Lv != 0)
         cout << "|Lv: " << setfill(' ') << setw(9) << left << mapBlocks[35-i].Lv << '|';
       else
         cout << '|' << setfill(' ') << setw(13) << ' ' << '|';
       cout << setfill(' ') << setw(120) << ' ';
-      if (mapBlocks[0].Lv != 0)
+      if (mapBlocks[10+i].Lv != 0)
         cout << "|Lv: " << setfill(' ') << setw(9) << left << mapBlocks[10+i].Lv << '|' <<endl;
       else
         cout << '|' << setfill(' ') << setw(13) << ' ' << '|' << endl;
 
-      cout << '|' << setfill(' ') << setw(13) << left << mapBlocks[35-i].player[0] + ' ' + mapBlocks[35-i].player[1] << '|' << setfill(' ') << setw(120) << ' '
-      << '|' << setfill(' ') << setw(13) << left << mapBlocks[10+i].player[0] + ' ' + mapBlocks[10+i].player[1] << '|' << endl;
-      cout << '|' << setfill(' ') << setw(13) << left << mapBlocks[35-i].player[2] + ' ' + mapBlocks[35-i].player[3] << '|' << setfill(' ') << setw(120) << ' '
-      << '|' << setfill(' ') << setw(13) << left << mapBlocks[10+i].player[2] + ' ' + mapBlocks[10+i].player[3] << '|' << endl;
+      if (players[0].position == 35-i)
+        cout << '|' << setfill(' ') << setw(6) << left << players[0].name << ' ';
+      else
+        cout << "|       ";
+      if (players[1].position == 35-i)
+        cout << setfill(' ') << setw(6) << left << players[1].name << '|';
+      else
+        cout << "      |";
+      cout << setfill(' ') << setw(120) << ' ';
+      if (playerNo > 3 && players[3].position == 10+i)
+        cout << '|' << setfill(' ') << setw(6) << left << players[4].name << ' ';
+      else
+        cout << "|       ";
+      if (playerNo > 4 && players[4].position == 10+i)
+        cout << setfill(' ') << setw(6) << left << players[4].name << '|' << endl;
+      else
+        cout << "      |" << endl;
+
       cout << setfill('-') << setw(15) << '-' << setfill(' ') << setw(120) << ' ' << setfill('-') << setw(15) << '-' << endl;
     }
   }
