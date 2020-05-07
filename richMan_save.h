@@ -3,6 +3,6 @@
 #define RICHMAN_SAVE_H
 #include "richMan_struct.h"
 
-void richMan_save(Block *mapBlocks, Status *&players, int n);
+void richMan_save(Block *mapBlocks, Status *players, int n);
 
 #endif
