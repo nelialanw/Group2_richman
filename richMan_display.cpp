@@ -103,12 +103,30 @@ void displayMap(Block *mapBlocks, Status *players, int playerNo){
       else
         cout << "      |";
       cout << setfill(' ') << setw(120) << ' ';
-      if (playerNo > 3 && players[3].position == 10+i)
-        cout << '|' << setfill(' ') << setw(6) << left << players[4].name << ' ';
+      if (players[0].position == 10+i)
+        cout << '|' << setfill(' ') << setw(6) << left << players[0].name << ' ';
       else
         cout << "|       ";
-      if (playerNo > 4 && players[4].position == 10+i)
-        cout << setfill(' ') << setw(6) << left << players[4].name << '|' << endl;
+      if (players[1].position == 10+i)
+        cout << setfill(' ') << setw(6) << left << players[1].name << '|' << endl;
+      else
+        cout << "      |" << endl;
+
+      if (playerNo > 2 && players[2].position == 35-i)
+        cout << '|' << setfill(' ') << setw(6) << left << players[2].name << ' ';
+      else
+        cout << "|       ";
+      if (playerNo > 3 && players[3].position == 35-i)
+        cout << setfill(' ') << setw(6) << left << players[3].name << '|';
+      else
+        cout << "      |";
+      cout << setfill(' ') << setw(120) << ' ';
+      if (playerNo > 2 && players[2].position == 10+i)
+        cout << '|' << setfill(' ') << setw(6) << left << players[2].name << ' ';
+      else
+        cout << "|       ";
+      if (playerNo > 3 && players[3].position == 10+i)
+        cout << setfill(' ') << setw(6) << left << players[3].name << '|' << endl;
       else
         cout << "      |" << endl;
 
