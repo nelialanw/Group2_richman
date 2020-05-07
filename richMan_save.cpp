@@ -62,7 +62,7 @@ void richMan_save(struct Block *mapBlocks, struct Status *players){
         << players[j-36].property << " "
         << players[j-36].position << endl;
     }
-    j++
+    j++;
   }
   fout.close();
 }
