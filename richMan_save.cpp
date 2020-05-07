@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void richMan_save(struct Block *mapBlocks, struct Status *players){
+void richMan_save(Block *mapBlocks, Status *players, int n){
   string slot_name;
   DIR *dir = opendir("save");
 
@@ -44,10 +44,7 @@ void richMan_save(struct Block *mapBlocks, struct Status *players){
     cout << "Error in the file opening!" << endl;
     exit(1);
   }
-  int n = 0;
-  for (int i=0; i<4; i++){
-    if (players[i].name != ""){n++;}
-  }
+
   int j = 0;
   while (j < 36+n) {
     if (j <36) {
@@ -64,5 +61,7 @@ void richMan_save(struct Block *mapBlocks, struct Status *players){
     }
     j++;
   }
+  int choice = 1;
+
   fout.close();
 }
