@@ -33,7 +33,7 @@ void richMan_load(struct Block *mapBlocks, struct Status *&players, int &playerN
   }
   closedir(dir);
 
-  cout << "Which slot do you want to load? (Name of file)";
+  cout << "Which slot do you want to load? (Name of file)" << endl;
   string name;
   cin >> slot_name;
   ifstream fin("save/"+slot_name+".txt"); //change the cmd when the name of directory changed
