@@ -13,7 +13,7 @@ void mapEffect(int dice, int turn, Block *mapBoard, Status *players, int playerN
   int pos = players[turn].position;
   while (choice)
   {
-    system("CLS");
+    //system("CLS");
     displayMap(mapBoard, players, playerNo);
     cout << "========================================================" << endl
     << "The dice number is " << dice << "  "
@@ -27,12 +27,14 @@ void mapEffect(int dice, int turn, Block *mapBoard, Status *players, int playerN
     {
       int buy;
       cout << "Buy " << mapBoard[pos].name << "(price: "<< mapBoard[pos].price << ')' << " ? (1:buy 0:not buy)";
-      if (cin >> buy)
+      cin >> buy;
+      if (buy)
       {
         mapBoard[pos].ownership = turn;
         players[turn].cash -= mapBoard[pos].price;
         cout << "## " << players[mapBoard[pos].ownership].name << " become the owner of " << mapBoard[pos].name << " ##" << endl
         << "## Cash remaining: " << players[turn].cash << " ##" << endl;
+        players[turn].property += 1;
       }
     }
     else if(mapBoard[pos].ownership >= 0 && mapBoard[pos].ownership < playerNo)
