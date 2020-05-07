@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void richMan_load(struct Block *mapBlocks, struct Status *players){
+void richMan_load(struct Block *mapBlocks, struct Status *players, int &PlayerNo){
   string slot_name;
   char save[10] = "save";
   DIR *dir= opendir(save);
@@ -45,17 +45,21 @@ void richMan_load(struct Block *mapBlocks, struct Status *players){
     cout << "Error in the file opening!" << endl;
     exit(1);
   }
-  int j = 0, playerNo;
+  int j = 0;
   while (fin >> name) {
     if (j < 36){
       mapBlocks[j].name = name;
       fin >> mapBlocks[j].price;
       fin >> mapBlocks[j].Lv;
       fin >> mapBlocks[j].ownership;
+      if (j == 35) {
+        fin >> playerNo;
+        players = new Status[playerNo];
+      }
     }
     else {
-      players = new Status[playerNo];
       fin >> playerNo;
+      players = new Status[playerNo];
       players[j-36].name = name;
       fin >> players[j-36].cash;
       fin >> players[j-36].property;
