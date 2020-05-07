@@ -53,6 +53,7 @@ void random_event(string event, struct Status *players, int player_code)
     }
     getline(fin,temp);
     cout << temp << endl;
+    cout << temp << endl;
   }
   fin.close();
 }
