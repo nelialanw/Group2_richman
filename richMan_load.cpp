@@ -55,15 +55,13 @@ void richMan_load(struct Block *mapBlocks, struct Status *&players, int &playerN
       }
     }
     else if (j > 35 && j < 36 + playerNo) {
-      fin >> playerNo;
-      players = new Status[playerNo];
       players[j-36].name = name;
       fin >> players[j-36].cash;
       fin >> players[j-36].property;
       fin >> players[j-36].position;
     }
     else {
-      fin >> round;
+      round = stoi(name);
       fin >> turn;
     }
     j++;
