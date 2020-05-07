@@ -5,7 +5,7 @@ struct Block{
   std::string name;
   double price;
   int Lv;
-  std::string ownership;
+  int ownership;
 };
 
 struct Status{
