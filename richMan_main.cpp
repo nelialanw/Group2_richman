@@ -73,6 +73,7 @@ int main(){
     }
     if (choice == 3)
     {
+      cout << "save round: " << round << ' ' << turn << endl;
       richMan_save(mapBlocks, players, playerNo, round, turn);
     }
 
@@ -96,17 +97,19 @@ int main(){
 int menu(){
   int choice;
 
-  cout << "============================" << endl;
-  cout << "*****     RichMan      *****" << endl;
-  cout << "============================" << endl;
-  cout << "1. Start a new game" << endl;
-  cout << "2. Load previous game (Not Finish)" << endl;
-  cout << "3. Game rules (Not Finish)" << endl;
-  cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+  cout << "==================================" << endl
+  << "*****     RichMan      *****" << endl
+  << "==================================" << endl
+  << "Please Use Full Screen to Play" << endl
+  << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
+  << "1. Start a new game" << endl
+  << "2. Load previous game (Not Finish)" << endl
+  << "3. Game rules (Not Finish)" << endl
+  << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
   cout << "Your choice: ";
   cin >> choice;
 
-  system("CLS");
+  //system("CLS");
 
   return choice;
 }
@@ -135,7 +138,7 @@ void createCharacters(Status *&players){
       for (int i = 0; i < playerNo; i++)
       {
         cout << "~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
-        cout << "Please enter the name of player " << i << ": ";
+        cout << "Please enter the name of player " << i+1 << ": ";
         cin >> players[i].name;
         players[i].cash = 100000;
         players[i].property = 0;
@@ -143,7 +146,7 @@ void createCharacters(Status *&players){
       }
       //createMap("save/default.txt", mapBlocks);
 
-      system("CLS");
+      //system("CLS");
       break;
   }
 
