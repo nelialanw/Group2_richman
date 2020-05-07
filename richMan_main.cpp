@@ -8,13 +8,14 @@
 #include <time.h>
 //#include <load_richman.h>
 #include "richMan_save.h"
+#include "richMan_load.h"
 #include "richMan_display.h"
 //#include "richMan_struct.h"
 #include "richMan_mapEffect.h"
 
 using namespace std;
 
-int playerNo;
+int playerNo = 0;
 
 int menu();
 void createCharacters(Status *&players);
@@ -37,7 +38,7 @@ int main(){
       createMap("save/default.txt", mapBlocks);//select single/multi game mode, create new Players and map
       break;
     case 2:
-      //load();
+      richMan_load(mapBlocks, players, playerNo);
       break;
     case 3:
       //display the game rules
@@ -52,10 +53,7 @@ int main(){
   {
     static int round = 0, turn = 0, choice;
     cout << players[turn].cash << endl;
-    /*for (int i = 0; i < 36; i++)
-    {
-      cout << mapBlocks[i].name << ' ' << mapBlocks[i].price << ' ' << mapBlocks[i].Lv << ' ' << mapBlocks[i].ownership << endl;
-    }*/
+
     displayMap(mapBlocks, players, playerNo);
     cout << "Round " << round+1 << "   " << players[turn].name << "\'s turn" << endl
     << "=====================================================" << endl
