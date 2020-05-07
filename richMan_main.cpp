@@ -7,7 +7,7 @@
 #include <sys/stat.h>
 #include <time.h>
 //#include <load_richman.h>
-//#include <save_richman.h>
+#include "richMan_save.h"
 #include "richMan_display.h"
 //#include "richMan_struct.h"
 #include "richMan_mapEffect.h"
@@ -24,7 +24,7 @@ int dice();
 int main(){
   int choice;
   bool endGame = false;
-  int n;
+  int n = 36;
   Block *mapBlocks = new Block[n];
   Status *players;
 
@@ -71,6 +71,10 @@ int main(){
       mapEffect(diceNo, turn, mapBlocks, players, playerNo);
       if (players[turn].position > 35)
         players[turn].position %= 36;
+    }
+    if (choice == 3)
+    {
+      richMan_save(mapBlocks, players, playerNo);
     }
 
 
