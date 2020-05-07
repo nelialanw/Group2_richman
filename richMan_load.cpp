@@ -6,6 +6,7 @@
 #include <string>
 #include <sys/stat.h>
 #include <dirent.h>
+#include "richMan_struct.h"
 
 using namespace std;
 
