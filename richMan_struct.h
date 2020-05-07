@@ -10,7 +10,7 @@ struct Block{
 
 struct Status{
   std::string name;
-  int cash;
+  double cash;
   int property;
   int position;
 };
