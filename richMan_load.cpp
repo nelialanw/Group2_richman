@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void richMan_load(struct Block *mapBlocks, struct Status *players, int &PlayerNo){
+void richMan_load(struct Block *mapBlocks, struct Status *&players, int &PlayerNo){
   string slot_name;
   char save[10] = "save";
   DIR *dir= opendir(save);
