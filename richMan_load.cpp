@@ -45,7 +45,7 @@ void richMan_load(struct Block *mapBlocks, struct Status *players){
     cout << "Error in the file opening!" << endl;
     exit(1);
   }
-  int j = 0;
+  int j = 0, playerNo;
   while (fin >> name) {
     if (j < 36){
       mapBlocks[j].name = name;
@@ -54,6 +54,8 @@ void richMan_load(struct Block *mapBlocks, struct Status *players){
       fin >> mapBlocks[j].ownership;
     }
     else {
+      players = new Status[playerNo];
+      fin >> playerNo;
       players[j-36].name = name;
       fin >> players[j-36].cash;
       fin >> players[j-36].property;
