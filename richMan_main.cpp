@@ -65,6 +65,9 @@ int main(){
     if (choice == 1)
     {
       players[turn].position += dice();
+      //mapEffect(turn, players, mapBlocks);
+      if (players[turn].position > 35)
+        players[turn].position %= 36;
     }
 
     system("CLS");
