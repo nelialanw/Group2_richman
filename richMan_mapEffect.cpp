@@ -32,8 +32,16 @@ void mapEffect(int dice, int turn, Block *mapBoard, Status *players, int playerN
         mapBoard[pos].ownership = turn;
         players[turn].cash -= mapBoard[pos].price;
         cout << "## " << players[mapBoard[pos].ownership].name << " become the owner of " << mapBoard[pos].name << " ##" << endl
-        << "## Cash remaining: " << players[turn].cash << " ##";
+        << "## Cash remaining: " << players[turn].cash << " ##" << endl;
       }
+    }
+    else if(mapBoard[pos].ownership >= 0 && mapBoard[pos].ownership < playerNo)
+    {
+      cout << "## " << mapBoard[pos].name << " is owned by " << players[mapBoard[pos].ownership].name << " ##" << endl
+      << "## You have to pay $" << mapBoard[pos].price*0.1 << " to " << players[mapBoard[pos].ownership].name << " ##" << endl;
+      players[turn].cash -= mapBoard[pos].price*0.1;
+      players[mapBoard[pos].ownership].cash += mapBoard[pos].price*0.1;
+      cout << "## Cash remaining: " << players[turn].cash << " ##" << endl;
     }
     cout << endl << "Enter 0 to continue the game: ";
     cin >> choice;
