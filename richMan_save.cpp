@@ -53,7 +53,7 @@ void richMan_save(Block *mapBlocks, Status *players, int n){
         << mapBlocks[j].Lv << " "
         << mapBlocks[j].ownership;
       if (j == 35) {
-        fout << n;
+        fout << " " << n;
       }
       fout << endl;
     }
