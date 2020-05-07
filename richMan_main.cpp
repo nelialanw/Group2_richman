@@ -72,7 +72,7 @@ int main(){
     }
     if (choice == 3)
     {
-      richMan_save(mapBlocks, players, playerNo);
+      richMan_save(mapBlocks, players, playerNo, round, turn);
     }
 
 
