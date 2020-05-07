@@ -51,7 +51,11 @@ void richMan_save(Block *mapBlocks, Status *players, int n){
       fout << mapBlocks[j].name << " "
         << mapBlocks[j].price << " "
         << mapBlocks[j].Lv << " "
-        << mapBlocks[j].ownership << endl;
+        << mapBlocks[j].ownership;
+      if (j == 35) {
+        fout << n;
+      }
+      fout << endl;
     }
     else {
       fout << players[j-36].name << " "
@@ -61,7 +65,5 @@ void richMan_save(Block *mapBlocks, Status *players, int n){
     }
     j++;
   }
-  int choice = 1;
-
   fout.close();
 }
