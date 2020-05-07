@@ -53,10 +53,12 @@ int main(){
   while (!endGame)
   {
     static int choice;
-    cout << players[turn].cash << endl;
 
     displayMap(mapBlocks, players, playerNo);
     cout << "Round " << round+1 << "   " << players[turn].name << "\'s turn" << endl
+    << "~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
+    << "Cash: " << players[turn].cash << "  Property owned: " << players[turn].property
+    << "  Position: " << mapBlocks[players[turn].position].name << endl
     << "=====================================================" << endl
     <<"1. Roll dice  2. Load game 3. Save game 4. Quit" << endl
     << "=====================================================" << endl
