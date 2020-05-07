@@ -5,6 +5,7 @@
 #include <string>
 #include "richMan_display.h"
 #include "richMan_mapEffect.h"
+#include "richMan_randomevent.h"
 
 using namespace std;
 
@@ -45,6 +46,10 @@ void mapEffect(int dice, int turn, Block *mapBoard, Status *players, int playerN
       players[mapBoard[pos].ownership].cash += mapBoard[pos].price*0.1;
       cout << "## Cash remaining: " << players[turn].cash << " ##" << endl;
     }
+    else if (mapBoard[pos].name.compare("Chance") == 0)
+      random_event("chance", players, turn);
+    else if (mapBoard[pos].name.compare("Destiny") == 0)
+      random_event("destiny", players, turn);
     cout << endl << "Enter 0 to continue the game: ";
     cin >> choice;
   }
