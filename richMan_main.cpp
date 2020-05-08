@@ -262,7 +262,7 @@ int main(){
         round++;
         turn = 0;
       }
-      save_temp(mapBlocks, players, playerNo, round, turn, mode)
+      save_temp(mapBlocks, players, playerNo, round, turn, mode);
       delete [] players;
       delete [] mapBlocks;
     }
