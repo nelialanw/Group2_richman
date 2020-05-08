@@ -124,7 +124,7 @@ int main(){
           if (choice == 3)
           {
             richMan_save(mapBlocks, players, playerNo, round, turn, mode);
-            cout << "****Your save is successful****"<< endl;
+            cout << "**** Your save is successful ****"<< endl;
             break;
           }
           if (choice == 4)
@@ -159,18 +159,13 @@ int main(){
           {
             cout << "## " << players[i].name << " bankrupted! ##" << endl;
             richMan_bankrupt(players, mapBlocks, playerNo, i);
-            check_bankrupt++;
             if (i == 0){
               cout << "Byebye! You lost the game" << endl;
               endGame = true;
             }
+            i--;
           }
           i++;
-        }
-        if (check_bankrupt > 0)
-        {
-          save_temp(mapBlocks, players, playerNo, round, turn, mode);
-          break;
         }
       }
       if (playerNo == 0 && endGame == true)
@@ -275,7 +270,7 @@ int main(){
           {
             cout << "## " << players[i].name << " bankrupted! ##" << endl;
             richMan_bankrupt(players, mapBlocks, playerNo, i);
-            check_bankrupt++;
+            i--;
           }
           i++;
         }
