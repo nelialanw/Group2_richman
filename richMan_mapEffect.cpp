@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void mapEffect(int dice, int turn, Block *mapBoard, Status *players, int playerNo){
+void mapEffect(int dice, int turn, Block *mapBoard, Status *players, int playerNo, int *freeze){
   int choice = 1;
   int pos = players[turn].position;
   while (choice)
@@ -64,7 +64,17 @@ void mapEffect(int dice, int turn, Block *mapBoard, Status *players, int playerN
     else if (mapBoard[pos].name.compare("Chance") == 0)
       random_event("chance", players, turn);
     else if (mapBoard[pos].name.compare("Destiny") == 0)
+    {
       random_event("destiny", players, turn);
+      if (players[turn].position == 9)
+      {
+        freeze[turn] = 3;
+      }
+      if (players[turn].position == 18)
+      {
+        freeze[turn] = 2;
+      }
+    }
     cout << endl << "Enter 0 to continue the game: ";
     cin >> choice;
   }
