@@ -23,7 +23,7 @@ int playerNo = 0;
 int mode = 2;
 
 int menu();
-void createCharacters(Status *&players);
+void createCharacters(Status *&players, int *&freeze);
 void createMap(string defaultMap, Block *&mapBlocks);
 int dice();
 
