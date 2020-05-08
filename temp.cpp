@@ -52,7 +52,7 @@ void save_temp(Block *mapBlocks, Status *players, int n, int round, int turn, in
   fout.close();
 }
 
-void load_temp(struct Block *mapBlocks, struct Status *&players, int &playerNo, int &round, int &turn, int &mode) {
+void load_temp(struct Block *mapBlocks, struct Status *&players, int &playerNo, int &round, int &turn, int &mode, int *&freeze) {
   string slot_name = "temp";
   string name;
   ifstream fin(slot_name+".txt"); //change the cmd when the name of directory changed
@@ -83,6 +83,10 @@ void load_temp(struct Block *mapBlocks, struct Status *&players, int &playerNo, 
       round = stoi(name);
       fin >> turn;
       fin >> mode;
+      for (int i = 0; i < playerNo; i++)
+      {
+        fin >> freeze[i];
+      }
     }
     j++;
   }
