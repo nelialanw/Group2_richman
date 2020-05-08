@@ -152,13 +152,14 @@ int main(){
             << "=====================================================" << endl;
         }
 
-        int i = 0;
+        int i = 0, check_bankrupt = 0;
         while (i < playerNo)
         {
           if (players[i].cash <= 0)
           {
             cout << "## " << players[i].name << " bankrupted! ##" << endl;
             richMan_bankrupt(players, mapBlocks, playerNo, i);
+            check_bankrupt++;
             if (i == 0){
               cout << "Byebye! You lost the game" << endl;
               endGame = true;
@@ -166,10 +167,19 @@ int main(){
           }
           i++;
         }
+        if (check_bankrupt > 0)
+        {
+          break;
+        }
       }
       if (playerNo == 0 && endGame == true)
       {
         cout << "No winner!! See you next time!!" << endl;
+        while (mode != 0)
+        {
+          cout << "Enter 0 to end ";
+          cin >> mode;
+        }
       }
       if (playerNo == 1 && endGame == true)
       {
@@ -257,15 +267,20 @@ int main(){
           break;
         }
         //system("CLS");
-        int i = 0;
+        int i = 0, check_bankrupt = 0;
         while (i < playerNo)
         {
           if (players[i].cash <= 0)
           {
             cout << "## " << players[i].name << " bankrupted! ##" << endl;
             richMan_bankrupt(players, mapBlocks, playerNo, i);
+            check_bankrupt++;
           }
           i++;
+        }
+        if (check_bankrupt>0)
+        {
+          break;
         }
         if (playerNo == 0)
         {
