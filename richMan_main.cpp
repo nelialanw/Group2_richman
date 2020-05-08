@@ -14,6 +14,7 @@
 #include "richMan_mapEffect.h"
 #include "richMan_randomevent.h"
 #include "richMan_bankrupt.h"
+#include "temp.h"
 
 using namespace std;
 
@@ -40,6 +41,9 @@ int main(){
     {
       createCharacters(players);
       createMap("save/default.txt", mapBlocks);//select single/multi game mode, create new Players and map
+      save_temp(mapBlocks, players, playerNo, round, turn, mode);
+      delete [] players;
+      delete [] mapBlocks;
       break;
     }
     case 2:
@@ -172,6 +176,9 @@ int main(){
     {
       static int choice;
       //cout << "freeze: " << freeze[turn] << endl;
+      Block *mapBlocks = new Block[n];
+      Status *players;
+      load_temp(mapBlocks, players, playerNo, round, turn, mode);
 
       displayMap(mapBlocks, players, playerNo);
       cout << "Round " << round+1 << "   " << players[turn].name << "\'s turn" << endl
@@ -253,6 +260,8 @@ int main(){
         turn = 0;
       }
     }
+    delete [] players;
+    delete [] mapBlocks;
   }
   return 0;
 }
