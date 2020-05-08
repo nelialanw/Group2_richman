@@ -15,7 +15,7 @@ void mapEffect(int dice, int mode, int turn, Block *mapBoard, Status *players, i
   while (choice && (mode ==2 || (mode == 1 && turn ==0)))
   {
     //system("CLS");
-    displayMap(mapBoard, players, playerNo);
+    //displayMap(mapBoard, players, playerNo);
     cout << "========================================================" << endl
     << "The dice number is " << dice << "  "
     << players[turn].name << " go to " << mapBoard[pos].name << endl
