@@ -44,7 +44,7 @@ int main(){
     }
     case 2:
     {
-      richMan_load(mapBlocks, players, playerNo, round, turn);
+      richMan_load(mapBlocks, players, playerNo, round, turn, mode);
       break;
     }
     case 3:
@@ -215,7 +215,7 @@ int main(){
         if (choice == 3)
         {
           cout << "save round: " << round << ' ' << turn << endl;
-          richMan_save(mapBlocks, players, playerNo, round, turn);
+          richMan_save(mapBlocks, players, playerNo, round, turn, mode);
         }
         /*if (choice == 5)
         {
