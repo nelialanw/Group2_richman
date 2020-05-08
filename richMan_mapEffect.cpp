@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void mapEffect(int dice, int turn, Block *mapBoard, Status *players, int playerNo, int *freeze){
+void mapEffect(int dice, int mode, int turn, Block *mapBoard, Status *players, int playerNo, int *freeze){
   int choice = 1;
   int pos = players[turn].position;
   while (choice && (mode ==1 || (mode == 2 && turn ==0)))
