@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void richMan_save(Block *mapBlocks, Status *players, int n, int round, int turn){
+void richMan_save(Block *mapBlocks, Status *players, int n, int round, int turn, int mode){
   string slot_name;
   DIR *dir = opendir("save");
 
@@ -64,7 +64,7 @@ void richMan_save(Block *mapBlocks, Status *players, int n, int round, int turn)
         << players[j-36].position << endl;
     }
     else {
-      fout << round << " " << turn << endl;
+      fout << round << " " << turn << " " << mode << endl;
     }
     j++;
   }
