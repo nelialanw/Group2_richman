@@ -8,8 +8,15 @@
 
 using namespace std;
 
-void richMan_bankrupt(struct Status *&players, int &playerNo, int player_bankrupt){
+void richMan_bankrupt(struct Status *&players, Block *mapBlocks, int &playerNo, int player_bankrupt){
   int i = 0;
+  for (int i = 0; i < 36; i++)
+  {
+    if (mapBlocks[i].ownership == player_bankrupt)
+    {
+      mapBlocks[i].ownership = -1;
+    }
+  }
   while (i<player_bankrupt)
   {
     i++;
