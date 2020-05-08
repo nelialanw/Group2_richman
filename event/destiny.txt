@@ -5,7 +5,7 @@ You get your $5000 insurance...But you have to stay into hospital for 2 rounds
 u +5000 0
 Someone gave you $5000....Just someone...
 u -3000 4
-You drive so fast! 80km/h!!! Remember don't speeding!! $3000 fFne!
+You drive so fast! 80km/h!!! Remember don't speeding!! $3000 fine!
 a 5000 0
 The stock market rises rapidly, everyone gets $5000
 u -4000 2
