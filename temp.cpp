@@ -34,7 +34,7 @@ void save_temp(Block *mapBlocks, Status *players, int n, int round, int turn, in
         << players[j-36].position << endl;
     }
     else {
-      fout << round << " " << turn << " " << mode ' ';
+      fout << round << " " << turn << " " << mode << ' ';
       for (int i = 0; i < n; i++)
       {
         if (i != n-1)
