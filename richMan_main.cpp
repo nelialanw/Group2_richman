@@ -116,20 +116,21 @@ int main(){
         }
         mapEffect(diceNo, mode, turn, mapBlocks, players, playerNo, freeze);
       }
-
-    int i = 0;
-    while (i < playerNo)
-    {
-      if (players[i].cash <= 0)
+   
+      int i = 0;
+      while (i < playerNo)
       {
-        cout << "## " << players[i].name << " bankrupted! ##" << endl;
-        richMan_bankrupt(players, playerNo, i);
-        if (i == 0){
-          cout << "Byebye! You lost the game" << endl;
-          Endgame = False;
+        if (players[i].cash <= 0)
+        {
+          cout << "## " << players[i].name << " bankrupted! ##" << endl;
+          richMan_bankrupt(players, playerNo, i);
+          if (i == 0){
+            cout << "Byebye! You lost the game" << endl;
+            Endgame = False;
+          }
         }
+        i++;
       }
-      i++;
     }
     if (playerNo == 1)
     {
