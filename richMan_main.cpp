@@ -324,7 +324,7 @@ void createCharacters(Status *&players){
 
   cout << "1. Single Mode" << endl;
   cout << "2. MultiPlayer Mode" << endl;
-  cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+  cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
   cout << "Your choice: ";
   cin >> mode;
 
@@ -348,7 +348,7 @@ void createCharacters(Status *&players){
       for (int i = 0; i < playerNo; i++)
       {
         if (i == 0){
-          cout << "~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+          cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
           cout << "Please enter your name: ";
           cin >> players[i].name;
         }
@@ -373,7 +373,7 @@ void createCharacters(Status *&players){
       players = new Status[playerNo];
       for (int i = 0; i < playerNo; i++)
       {
-        cout << "~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+        cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
         cout << "Please enter the name of player " << i+1 << ": ";
         cin >> players[i].name;
         players[i].cash = 10000;
