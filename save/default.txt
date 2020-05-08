@@ -7,7 +7,7 @@ Chance 0 0 999
 TSW 4500 1 -1
 YuenLong 4800 1 -1
 LongPing 4000 1 -1
-Jail 2 0 999
+Jail 0 0 999
 Fanling 3800 1 -1
 TaiWo 4800 1 -1
 TaiPoMkt 5000 1 -1
