@@ -99,7 +99,8 @@ int main(){
             << "Cash: " << players[turn].cash << "  Property owned: " << players[turn].property
             << "  Position: " << mapBlocks[players[turn].position].name << endl
             << "=====================================================" << endl
-            <<"1. Roll dice  2. Load 3. Save 4. Properties 5. Quit" << endl
+            << "        1. Roll dice  2. Load game 3. Save game      " << endl
+            << "        4. Properties 5. Show Map  6. Quit           " << endl
             << "=====================================================" << endl
             << "Your choice: ";
           cin >> choice;
@@ -144,6 +145,11 @@ int main(){
             break;
           }
           if (choice == 5)
+          {
+            displayMap(mapBlocks, players, playerNo);
+            break;
+          }
+          if (choice == 6)
           {
             cout << "Thank you for playing richMan!! Bye!!" << endl;
             endGame = true;
@@ -250,7 +256,8 @@ int main(){
         cout << "Cash: " << players[turn].cash << "  Property owned: " << players[turn].property
         << "  Position: " << mapBlocks[players[turn].position].name << endl
         << "=====================================================" << endl
-        <<"1. Roll dice  2. Load 3. Save 4. Properties 5. Quit" << endl
+        << "        1. Roll dice  2. Load game 3. Save game      " << endl
+        << "        4. Properties 5. Show Map  6. Quit           " << endl
         << "=====================================================" << endl
         << "Your choice: ";
         cin >> choice;
@@ -297,6 +304,11 @@ int main(){
           break;
         }
         if (choice == 5)
+        {
+          displayMap(mapBlocks, players, playerNo);
+          break;
+        }
+        if (choice == 6)
         {
           cout << "Thank you for playing richMan!! Bye!!" << endl;
           endGame = true;
