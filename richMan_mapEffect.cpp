@@ -88,9 +88,8 @@ void mapEffect(int dice, int mode, int turn, Block *mapBoard, Status *players, i
     cout << "========================================================" << endl
     << "The dice number is " << dice << "  "
     << players[turn].name << " go to " << mapBoard[pos].name << endl
-    << "========================================================" << endl
     << "Cash: " << players[turn].cash << ' ' << "Property owned: " << players[turn].property << endl
-    <<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+         << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 
     if (players[turn].cash > mapBoard[pos].price && mapBoard[pos].ownership == -1)
     {
