@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "richMan_rule.h"
 
 
 using namespace std;
