@@ -89,16 +89,6 @@ int main(){
             << "=====================================================" << endl
             << "Your choice: ";
           cin >> choice;
-          while (choice == 3)
-          {
-            cout << "save round: " << round << ' ' << turn << endl;
-            richMan_save(mapBlocks, players, playerNo, round, turn, mode);
-            cout << "=====================================================" << endl
-              <<"1. Roll dice  2. Load game 3. Save game 4. Quit" << endl
-              << "=====================================================" << endl
-              << "Your choice: ";
-            cin >> choice;
-          }
           if (choice == 1)
           {
             int diceNo = dice();
@@ -113,12 +103,18 @@ int main(){
           if (choice == 2)
           {
             richMan_load(mapBlocks, players, playerNo, round, turn, mode);
+            break;
           }
-
+          if (choice == 3)
+          {
+            richMan_save(mapBlocks, players, playerNo, round, turn, mode);
+            break;
+          }
           if (choice == 4)
           {
             cout << "Thank you for playing richMan!! Bye!!" << endl;
             endGame = true;
+            break;
           }
         }
         if (turn!=0){
