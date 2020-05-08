@@ -65,7 +65,7 @@ void richMan_load(struct Block *mapBlocks, struct Status *&players, int &playerN
       fin >> turn >> mode;
       for (int i = 0; i < playerNo; i++)
       {
-        fout >> freeze[i];
+        fin >> freeze[i];
       }
     }
     j++;
