@@ -79,7 +79,7 @@ int main(){
       load_temp(mapBlocks, players, playerNo, round, turn, mode);
       if (freeze[turn] != 0)
       {
-        cout << "## << players[turn].name << " have to stay in " << mapBlocks[players[turn].position].name << " for " << freeze[turn]-1 << " more turn ##" << endl;
+        cout << "## " << players[turn].name << " have to stay in " << mapBlocks[players[turn].position].name << " for " << freeze[turn]-1 << " more turn ##" << endl;
         freeze[turn] -= 1;
         int end = 1;
         while (end != 0)
@@ -207,7 +207,7 @@ int main(){
       << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
       if (freeze[turn] != 0)
       {
-        cout << "## You have to stay in " << mapBlocks[players[turn].position].name << " for " << freeze[turn]-1 << " more turn ##" << endl;
+        cout << "## " << players[turn].name << " have to stay in " << mapBlocks[players[turn].position].name << " for " << freeze[turn]-1 << " more turn ##" << endl;
         freeze[turn] -= 1;
         int end = 1;
         while (end != 0)
