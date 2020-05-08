@@ -166,15 +166,18 @@ int main(){
           i++;
         }
       }
+      if (playerNo == 0 && endGame == true)
+      {
+        cout << "No winner!! See you next time!!" << endl;
+      }
       if (playerNo == 1 && endGame == true)
       {
         endGame = true;
         cout << "## Congratulate " << players[0].name << " wins the game ##" << endl;
-        int end = 1;
-        while (end != 0)
+        while (mode != 0)
         {
           cout << "Enter 0 to end ";
-          cin >> end;
+          cin >> mode;
         }
       }
       turn++;
@@ -260,22 +263,28 @@ int main(){
           {
             cout << "## " << players[i].name << " bankrupted! ##" << endl;
             richMan_bankrupt(players, playerNo, i);
-            if (i == 0)
-            {
-              endGame = true;
             }
           }
           i++;
+        }
+        if (playerNo == 0)
+        {
+          endGame = true;
+          cout << "No winner!! See you next time!!" << endl;
+          while (mode != 0)
+          {
+            cout << "Enter 0 to end ";
+            cin >> mode;
+          }
         }
         if (playerNo == 1)
         {
           endGame = true;
           cout << "## Congratulate " << players[0].name << " wins the game ##" << endl;
-          int end = 1;
-          while (end != 0)
+          while (mode != 0)
           {
             cout << "Enter 0 to end ";
-            cin >> end;
+            cin >> mode;
           }
         }
       }
