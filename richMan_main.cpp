@@ -14,8 +14,8 @@
 #include "richMan_mapEffect.h"
 #include "richMan_randomevent.h"
 #include "richMan_bankrupt.h"
-#include "temp.h"
 #include "richMan_rule.h"
+#include "temp.h"
 
 using namespace std;
 
@@ -302,8 +302,8 @@ int menu(){
   << "Please Use Full Screen to Play" << endl
   << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
   << "1. Start a new game" << endl
-  << "2. Load previous game (Not Finish)" << endl
-  << "3. Game rules (Not Finish)" << endl
+  << "2. Load previous game" << endl
+  << "3. Game rules" << endl
   << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
   cout << "Your choice: ";
   cin >> choice;
@@ -313,7 +313,7 @@ int menu(){
 
 void createCharacters(Status *&players){
 
-  cout << "1. Single Mode (Not Finish)" << endl;
+  cout << "1. Single Mode" << endl;
   cout << "2. MultiPlayer Mode" << endl;
   cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
   cout << "Your choice: ";
