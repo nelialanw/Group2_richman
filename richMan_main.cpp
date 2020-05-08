@@ -162,6 +162,12 @@ int main(){
             if (i == 0){
               cout << "Byebye! You lost the game" << endl;
               endGame = true;
+              while (mode != 0)
+              {
+                cout << "Enter 0 to end ";
+                cin >> mode;
+              }
+              break;
             }
             i--;
           }
