@@ -135,7 +135,7 @@ void displayMap(Block *mapBlocks, Status *players, int playerNo){
       else
         cout << "      |";
       if ( i>0 && playerNo-i > -1)
-        cout << setfill(' ') << setw(40) << ' ' << setw(20) << "Position: " << setw(10) << mapBlocks[players[i-1].position].name << setfill(' ') << setw(50) << ' ' ;
+        cout << setfill(' ') << setw(40) << ' ' << setw(20) << "Position: " << setw(20) << mapBlocks[players[i-1].position].name << setfill(' ') << setw(40) << ' ' ;
       else
         cout << setfill(' ') << setw(120) << ' ';
       if (playerNo > 2 && players[2].position == 10+i)
