@@ -46,7 +46,7 @@ int main(){
   {
     case 1:
     {
-      createCharacters(players);
+      createCharacters(players, freeze);
       createMap("save/default.txt", mapBlocks);//select single/multi game mode, create new Players and map
       save_temp(mapBlocks, players, playerNo, round, turn, mode, freeze);
       delete [] players;
