@@ -104,6 +104,11 @@ int main(){
           cout << "save round: " << round << ' ' << turn << endl;
           richMan_save(mapBlocks, players, playerNo, round, turn);
         }
+        if (choice == 4)
+        {
+          cout << "Thank you for playing richMan!! Bye!!" << endl;
+          Endgame = false;
+        }
       }
       if (turn!=0){
         choice = 1;
@@ -126,7 +131,7 @@ int main(){
           richMan_bankrupt(players, playerNo, i);
           if (i == 0){
             cout << "Byebye! You lost the game" << endl;
-            Endgame = False;
+            Endgame = false;
           }
         }
         i++;
