@@ -15,6 +15,7 @@
 #include "richMan_randomevent.h"
 #include "richMan_bankrupt.h"
 #include "temp.h"
+#include "richMan_rule.h"
 
 using namespace std;
 
