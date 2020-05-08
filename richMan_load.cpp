@@ -37,10 +37,11 @@ void richMan_load(struct Block *mapBlocks, struct Status *&players, int &playerN
   string name;
   cin >> slot_name;
   ifstream fin("save/"+slot_name+".txt"); //change the cmd when the name of directory changed
-  if (fin.fail()) {
+  while (fin.fail()) {
     //the error message to notify failed opening; (1) for importing text
-    cout << "Error in the file opening!" << endl;
-    exit(1);
+    cout << "Wrong file name!!! Please enter the correct slot name!!!" << endl;
+    cin >> slot_name;
+    ifstream fin("save/"+slot_name+".txt");
   }
   int j = 0;
   while (fin >> name) {
