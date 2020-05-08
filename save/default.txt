@@ -1,4 +1,4 @@
-Start 100000 0 999
+Start 0 0 999
 Austin 7000 1 -1
 NamCheong 7000 1 -1
 TWWest 6000 1 -1
