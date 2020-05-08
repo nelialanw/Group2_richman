@@ -13,10 +13,12 @@
 //#include "richMan_struct.h"
 #include "richMan_mapEffect.h"
 #include "richMan_randomevent.h"
+#include "richMan_bankrupt.h"
 
 using namespace std;
 
 int playerNo = 0;
+int mode;
 
 int menu();
 void createCharacters(Status *&players);
@@ -50,7 +52,7 @@ int main(){
       choice = menu();
   }
 
-  while (!endGame)
+  while (!endGame && mode == 2)
   {
     static int choice;
 
@@ -85,7 +87,7 @@ int main(){
     }
 
     //system("CLS");
-
+    //richMan_bankrupt()
     turn++;
     if (turn%playerNo == 0)
     {
@@ -117,7 +119,6 @@ int menu(){
 }
 
 void createCharacters(Status *&players){
-  int mode;
 
   cout << "1. Single Mode (Not Finish)" << endl;
   cout << "2. MultiPlayer Mode" << endl;
