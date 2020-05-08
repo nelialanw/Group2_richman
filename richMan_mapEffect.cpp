@@ -38,16 +38,16 @@ void mapEffect(int dice, int mode, int turn, Block *mapBoard, Status *players, i
         players[turn].property += 1;
       }
     }
-    else if (mapBoard[pos].ownership == turn && players[turn].cash >= mapBoard[pos].price*0.1)
+    else if (mapBoard[pos].ownership == turn && players[turn].cash >= mapBoard[pos].price*0.5)
     {
       int invest;
-      cout << "Invest " << mapBoard[pos].price*0.1 << " to upgrade " << mapBoard[pos].name << " ? (1:yes 0:No)";
+      cout << "Invest " << mapBoard[pos].price*0.5 << " to upgrade " << mapBoard[pos].name << " ? (1:yes 0:No)";
       cin >> invest;
       if(invest)
       {
         mapBoard[pos].Lv += 1;
-        players[turn].cash -= mapBoard[pos].price*0.1;
-        mapBoard[pos].price *= 1.1;
+        players[turn].cash -= mapBoard[pos].price*0.5;
+        mapBoard[pos].price *= 1.5;
         cout << "## Successfully upgrade " << mapBoard[pos].name << " to Lv: " << mapBoard[pos].Lv << " ##" << endl
         << "## Value of " << mapBoard[pos].name << " become $" << mapBoard[pos].price << " ##" << endl
         << "## Cash remaining: " << players[turn].cash << " ##" << endl;
@@ -56,9 +56,9 @@ void mapEffect(int dice, int mode, int turn, Block *mapBoard, Status *players, i
     else if(mapBoard[pos].ownership >= 0 && mapBoard[pos].ownership < playerNo && mapBoard[pos].ownership != turn)
     {
       cout << "## " << mapBoard[pos].name << " is owned by " << players[mapBoard[pos].ownership].name << " ##" << endl
-      << "## You have to pay $" << mapBoard[pos].price*0.1 << " to " << players[mapBoard[pos].ownership].name << " ##" << endl;
-      players[turn].cash -= mapBoard[pos].price*0.1;
-      players[mapBoard[pos].ownership].cash += mapBoard[pos].price*0.1;
+      << "## You have to pay $" << mapBoard[pos].price*0.3 << " to " << players[mapBoard[pos].ownership].name << " ##" << endl;
+      players[turn].cash -= mapBoard[pos].price*0.3;
+      players[mapBoard[pos].ownership].cash += mapBoard[pos].price*0.3;
       cout << "## Cash remaining: " << players[turn].cash << " ##" << endl;
     }
     else if (mapBoard[pos].name.compare("Chance") == 0)
