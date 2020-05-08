@@ -21,6 +21,7 @@ void richMan_bankrupt(struct Status *&players, Block *mapBlocks, int &playerNo, 
   {
     i++;
   }
+  cout << players[player_bankrupt].name << " is bankrupted!!" << endl;
   while (i<playerNo-1)
   {
     players[i] = players[i+1];
@@ -28,5 +29,4 @@ void richMan_bankrupt(struct Status *&players, Block *mapBlocks, int &playerNo, 
   }
   players[i] = {};
   playerNo-=1;
-
 }
