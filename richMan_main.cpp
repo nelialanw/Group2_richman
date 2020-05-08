@@ -96,7 +96,7 @@ int main(){
             if (players[turn].position > 35)
             {
               players[turn].position %= 36;
-              players[turn].cash += 100000;
+              players[turn].cash += 50000;
             }
             mapEffect(diceNo, mode, turn, mapBlocks, players, playerNo, freeze);
           }
@@ -124,7 +124,7 @@ int main(){
           if (players[turn].position > 35)
           {
             players[turn].position %= 36;
-            players[turn].cash += 100000;
+            players[turn].cash += 50000;
           }
           mapEffect(diceNo, mode, turn, mapBlocks, players, playerNo, freeze);
           cout << "Round " << round+1 << "   " << players[turn].name << "\'s turn" << endl
@@ -310,7 +310,7 @@ void createCharacters(Status *&players){
         else {
           players[i].name = namelist[num[i-1]]+"_AI";
         }
-        players[i].cash = 100000;
+        players[i].cash = 50000;
         players[i].property = 0;
         players[i].position = 0;
       }
@@ -331,7 +331,7 @@ void createCharacters(Status *&players){
         cout << "~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
         cout << "Please enter the name of player " << i+1 << ": ";
         cin >> players[i].name;
-        players[i].cash = 100000;
+        players[i].cash = 50000;
         players[i].property = 0;
         players[i].position = 0;
       }
