@@ -91,7 +91,7 @@ int main(){
       else
       {
         if (turn == 0){
-          if (choice != 3)
+          if (choice != 3 && choice != 4)
           {
             displayMap(mapBlocks, players, playerNo);
           }
@@ -228,7 +228,7 @@ int main(){
       Block *mapBlocks = new Block[n];
       Status *players;
       load_temp(mapBlocks, players, playerNo, round, turn, mode);
-      if (choice != 3)
+      if (choice != 3 && choice != 4)
       {
         displayMap(mapBlocks, players, playerNo);
       }
