@@ -101,6 +101,12 @@ int main(){
     {
       endGame = true;
       cout << "## Congratulate " << players[0].name << " wins the game ##" << endl;
+      int end = 1;
+      while (end != 0)
+      {
+        cout << "Enter 0 to end ";
+        cin >> end;
+      }
     }
     turn++;
     if (turn%playerNo == 0)
