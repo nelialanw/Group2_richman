@@ -37,24 +37,30 @@ int main(){
   switch (choice)
   {
     case 1:
+    {
       createCharacters(players);
       createMap("save/default.txt", mapBlocks);//select single/multi game mode, create new Players and map
       break;
+    }
     case 2:
+    {
       richMan_load(mapBlocks, players, playerNo, round, turn);
       break;
+    }
     case 3:
       //display the game rules
       //rules();
       break;
     default:
+    {
       cout << "Please enter 1-3 only!" << endl;
       choice = menu();
+    }
   }
-  
+
   int *freeze = new int[playerNo]();
   while (!endGame && mode == 2)
-    {
+  {
     static int choice;
     //cout << "freeze: " << freeze[turn] << endl;
 
@@ -168,6 +174,7 @@ void createCharacters(Status *&players){
       //1 player + 3 AIs
       break;
     case 2:
+    {
       cout << "Please enter no. of player (2-4): ";
       cin >> playerNo;
 
@@ -185,6 +192,7 @@ void createCharacters(Status *&players){
 
       //system("CLS");
       break;
+    }
   }
 
   return;
