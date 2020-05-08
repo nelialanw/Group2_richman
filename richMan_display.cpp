@@ -72,7 +72,7 @@ void displayMap(Block *mapBlocks, Status *players, int playerNo){
 
     if (j == 1)
       break;
-
+    int temp = playerNo;
     for (int i = 0; i < 8; i++)
     {
       cout << setfill('-') << setw(15) << '-' << setfill(' ') << setw(120) << ' ' << setfill('-') << setw(15) << '-' <<endl;
@@ -83,7 +83,10 @@ void displayMap(Block *mapBlocks, Status *players, int playerNo){
         cout << "|price: " << setfill(' ') << setw(6) << left << mapBlocks[35-i].price << '|';
       else
         cout << '|' << setfill(' ') << setw(13) << ' ' << '|';
-      cout << setfill(' ') << setw(120) << ' ';
+      if ( i>0 && playerNo-i > -1)
+        cout << setfill(' ') << setw(40) << ' ' << setw(30) << players[i-1].name << setfill(' ') << setw(50) << ' ' ;
+      else
+        cout << setfill(' ') << setw(120) << ' ';
       if (mapBlocks[10+i].price != 0)
         cout << "|price: " << setfill(' ') << setw(6) << left << mapBlocks[10+i].price << '|' << endl;
       else
@@ -93,7 +96,10 @@ void displayMap(Block *mapBlocks, Status *players, int playerNo){
         cout << "|Lv: " << setfill(' ') << setw(9) << left << mapBlocks[35-i].Lv << '|';
       else
         cout << '|' << setfill(' ') << setw(13) << ' ' << '|';
-      cout << setfill(' ') << setw(120) << ' ';
+      if ( i>0 && playerNo-i > -1)
+        cout << setfill(' ') << setw(40) << ' ' << setw(20) << "Cash on hand: "<< setw(10) << players[i-1].cash << setfill(' ') << setw(50) << ' ' ;
+      else
+        cout << setfill(' ') << setw(120) << ' ';
       if (mapBlocks[10+i].Lv != 0)
         cout << "|Lv: " << setfill(' ') << setw(9) << left << mapBlocks[10+i].Lv << '|' <<endl;
       else
@@ -107,7 +113,10 @@ void displayMap(Block *mapBlocks, Status *players, int playerNo){
         cout << setfill(' ') << setw(6) << left << players[1].name << '|';
       else
         cout << "      |";
-      cout << setfill(' ') << setw(120) << ' ';
+      if ( i>0 && playerNo-i > -1)
+        cout << setfill(' ') << setw(40) << ' ' << setw(20) << "Property Owned: " << setw(10) << players[i-1].property << setfill(' ') << setw(50) << ' ' ;
+      else
+        cout << setfill(' ') << setw(120) << ' ';
       if (players[0].position == 10+i)
         cout << '|' << setfill(' ') << setw(6) << left << players[0].name << ' ';
       else
@@ -125,7 +134,10 @@ void displayMap(Block *mapBlocks, Status *players, int playerNo){
         cout << setfill(' ') << setw(6) << left << players[3].name << '|';
       else
         cout << "      |";
-      cout << setfill(' ') << setw(120) << ' ';
+      if ( i>0 && playerNo-i > -1)
+        cout << setfill(' ') << setw(40) << ' ' << setw(20) << "Position: " << setw(10) << mapBlocks[players[i-1].position].name << setfill(' ') << setw(50) << ' ' ;
+      else
+        cout << setfill(' ') << setw(120) << ' ';
       if (playerNo > 2 && players[2].position == 10+i)
         cout << '|' << setfill(' ') << setw(6) << left << players[2].name << ' ';
       else
