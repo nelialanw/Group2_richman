@@ -36,6 +36,11 @@ int main(){
 
   //display the main menu of the game
   choice = menu();
+  while (choice == 3)
+  {
+    rule();
+    choice = menu();
+  }
   switch (choice)
   {
     case 1:
@@ -55,10 +60,6 @@ int main(){
       delete [] mapBlocks;
       break;
     }
-    case 3:
-      //display the game rules
-      //rules();
-      break;
     default:
     {
       cout << "Please enter 1-3 only!" << endl;
