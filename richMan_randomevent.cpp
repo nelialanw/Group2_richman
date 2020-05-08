@@ -50,8 +50,8 @@ void random_event(string event, struct Status *players, int player_code)
     else {
       players[player_code].position += read_num;
     }
-    getline(fin,temp);
-    cout << temp << endl;
+    fin >> temp;
+    cout << temp << " ";
     getline(fin,temp);
     cout << temp << endl;
   }
