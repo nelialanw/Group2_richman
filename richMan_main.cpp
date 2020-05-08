@@ -229,6 +229,12 @@ int main(){
           richMan_save(mapBlocks, players, playerNo, round, turn, mode);
           break;
         }
+        if (choice == 4)
+        {
+          cout << "Thank you for playing richMan!! Bye!!" << endl;
+          endGame = true;
+          break;
+        }
         /*if (choice == 5)
         {
           random_event("chance", players, 0);
