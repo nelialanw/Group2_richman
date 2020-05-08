@@ -60,37 +60,70 @@ int main(){
 
   int *freeze = new int[playerNo]();
 
-  while (!endGame && mode == 1)
+  while (!endGame)
   {
-    static int choice;
-    if (freeze[turn] != 0)
+    while (mode == 1)
     {
-      cout << "## You have to stay in " << mapBlocks[players[turn].position].name << " for " << freeze[turn]-1 << " more turn ##" << endl;
-      freeze[turn] -= 1;
-      int end = 1;
-      while (end != 0)
+      static int choice;
+      if (freeze[turn] != 0)
       {
-        cout << "Enter 0 to end ";
-        cin >> end;
-      }
-    }
-    else
-    {
-      if (turn == 0){
-        displayMap(mapBlocks, players, playerNo);
-        cout << "Round " << round+1 << "   " << players[turn].name << "\'s turn" << endl
-          << "~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
-          << "Cash: " << players[turn].cash << "  Property owned: " << players[turn].property
-          << "  Position: " << mapBlocks[players[turn].position].name << endl
-          << "=====================================================" << endl
-          <<"1. Roll dice  2. Load game 3. Save game 4. Quit" << endl
-          << "=====================================================" << endl
-          << "Your choice: ";
-        cin >> choice;
-
-        if (choice == 1)
+        cout << "## You have to stay in " << mapBlocks[players[turn].position].name << " for " << freeze[turn]-1 << " more turn ##" << endl;
+        freeze[turn] -= 1;
+        int end = 1;
+        while (end != 0)
         {
-          int diceNo = dice();
+          cout << "Enter 0 to end ";
+          cin >> end;
+        }
+      }
+      else
+      {
+        if (turn == 0){
+          displayMap(mapBlocks, players, playerNo);
+          cout << "Round " << round+1 << "   " << players[turn].name << "\'s turn" << endl
+            << "~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
+            << "Cash: " << players[turn].cash << "  Property owned: " << players[turn].property
+            << "  Position: " << mapBlocks[players[turn].position].name << endl
+            << "=====================================================" << endl
+            <<"1. Roll dice  2. Load game 3. Save game 4. Quit" << endl
+            << "=====================================================" << endl
+            << "Your choice: ";
+          cin >> choice;
+          while (choice == 3)
+          {
+            cout << "save round: " << round << ' ' << turn << endl;
+            richMan_save(mapBlocks, players, playerNo, round, turn, mode);
+            cout << "=====================================================" << endl
+              <<"1. Roll dice  2. Load game 3. Save game 4. Quit" << endl
+              << "=====================================================" << endl
+              << "Your choice: ";
+            cin >> choice;
+          }
+          if (choice == 1)
+          {
+            int diceNo = dice();
+            players[turn].position += diceNo;
+            if (players[turn].position > 35)
+            {
+              players[turn].position %= 36;
+              players[turn].cash += 100000;
+            }
+            mapEffect(diceNo, mode, turn, mapBlocks, players, playerNo, freeze);
+          }
+          if (choice == 2)
+          {
+            richMan_load(mapBlocks, players, playerNo, round, turn, mode);
+          }
+
+          if (choice == 4)
+          {
+            cout << "Thank you for playing richMan!! Bye!!" << endl;
+            endGame = true;
+          }
+        }
+        if (turn!=0){
+          choice = 1;
+          int diceNo = rand()%6+1;
           players[turn].position += diceNo;
           if (players[turn].position > 35)
           {
@@ -98,68 +131,46 @@ int main(){
             players[turn].cash += 100000;
           }
           mapEffect(diceNo, mode, turn, mapBlocks, players, playerNo, freeze);
+          cout << "Round " << round+1 << "   " << players[turn].name << "\'s turn" << endl
+            << "~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
+            << "Cash: " << players[turn].cash << "  Property owned: " << players[turn].property
+            << "  Position: " << mapBlocks[players[turn].position].name << endl
+            << "=====================================================" << endl;
         }
-        if (choice == 3)
-        {
-          cout << "save round: " << round << ' ' << turn << endl;
-          richMan_save(mapBlocks, players, playerNo, round, turn);
-        }
-        if (choice == 4)
-        {
-          cout << "Thank you for playing richMan!! Bye!!" << endl;
-          endGame = true;
-        }
-      }
-      if (turn!=0){
-        choice = 1;
-        int diceNo = rand()%6+1;
-        players[turn].position += diceNo;
-        if (players[turn].position > 35)
-        {
-          players[turn].position %= 36;
-          players[turn].cash += 100000;
-        }
-        mapEffect(diceNo, mode, turn, mapBlocks, players, playerNo, freeze);
-        cout << "Round " << round+1 << "   " << players[turn].name << "\'s turn" << endl
-          << "~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
-          << "Cash: " << players[turn].cash << "  Property owned: " << players[turn].property
-          << "  Position: " << mapBlocks[players[turn].position].name << endl
-          << "=====================================================" << endl;
-      }
 
-      int i = 0;
-      while (i < playerNo)
-      {
-        if (players[i].cash <= 0)
+        int i = 0;
+        while (i < playerNo)
         {
-          cout << "## " << players[i].name << " bankrupted! ##" << endl;
-          richMan_bankrupt(players, playerNo, i);
-          if (i == 0){
-            cout << "Byebye! You lost the game" << endl;
-            endGame = true;
+          if (players[i].cash <= 0)
+          {
+            cout << "## " << players[i].name << " bankrupted! ##" << endl;
+            richMan_bankrupt(players, playerNo, i);
+            if (i == 0){
+              cout << "Byebye! You lost the game" << endl;
+              endGame = true;
+            }
           }
+          i++;
         }
-        i++;
       }
-    }
-    if (playerNo == 1 && endGame == true)
-    {
-      endGame = true;
-      cout << "## Congratulate " << players[0].name << " wins the game ##" << endl;
-      int end = 1;
-      while (end != 0)
+      if (playerNo == 1 && endGame == true)
       {
-        cout << "Enter 0 to end ";
-        cin >> end;
+        endGame = true;
+        cout << "## Congratulate " << players[0].name << " wins the game ##" << endl;
+        int end = 1;
+        while (end != 0)
+        {
+          cout << "Enter 0 to end ";
+          cin >> end;
+        }
+      }
+      turn++;
+      if (turn%playerNo == 0)
+      {
+        round++;
+        turn = 0;
       }
     }
-    turn++;
-    if (turn%playerNo == 0)
-    {
-      round++;
-      turn = 0;
-    }
-  }
 
   while (!endGame && mode == 2)
   {
