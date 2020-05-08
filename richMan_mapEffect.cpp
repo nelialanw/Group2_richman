@@ -83,10 +83,7 @@ void mapEffect(int dice, int mode, int turn, Block *mapBoard, Status *players, i
   {
     if (players[turn].cash > mapBoard[pos].price && mapBoard[pos].ownership == -1)
     {
-      int buy;
-      cout << "Buy " << mapBoard[pos].name << "(price: "<< mapBoard[pos].price << ')' << " ? (1:buy 0:not buy)";
-      srand(time(NULL));
-      buy = rand()%2;
+      int buy = 1;
       if (buy)
       {
         mapBoard[pos].ownership = turn;
