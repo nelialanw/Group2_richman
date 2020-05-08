@@ -18,7 +18,7 @@
 using namespace std;
 
 int playerNo = 0;
-int mode;
+int mode = 2;
 
 int menu();
 void createCharacters(Status *&players);
@@ -81,13 +81,27 @@ int main(){
       richMan_save(mapBlocks, players, playerNo, round, turn);
     }
 
-    if (choice == 5)
+    /*if (choice == 5)
     {
       random_event("chance", players, 0);
-    }
+    }*/
 
     //system("CLS");
-    //richMan_bankrupt()
+    int i = 0;
+    while (i < playerNo)
+    {
+      if (players[i].cash <= 0)
+      {
+        cout << "## " << players[i].name << " bankrupted! ##" << endl;
+        richMan_bankrupt(players, playerNo, i);
+      }
+      i++;
+    }
+    if (playerNo == 1)
+    {
+      endGame = true;
+      cout << "## Congratulate " << players[0].name << " wins the game ##" << endl;
+    }
     turn++;
     if (turn%playerNo == 0)
     {
