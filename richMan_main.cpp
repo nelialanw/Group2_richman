@@ -186,6 +186,7 @@ int main(){
               break;
             }
             i--;
+            turn--;
           }
           i++;
         }
@@ -310,6 +311,7 @@ int main(){
             cout << "## " << players[i].name << " bankrupted! ##" << endl;
             richMan_bankrupt(players, mapBlocks, freeze, playerNo, i);
             i--;
+            turn--;
           }
           i++;
         }
