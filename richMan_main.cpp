@@ -172,7 +172,7 @@ int main(){
           players[turn].position %= 36;
           players[turn].cash += 10000;
         }
-        mapEffect(diceNo, turn, mapBlocks, players, playerNo, freeze);
+        mapEffect(diceNo, mode, turn, mapBlocks, players, playerNo, freeze);
       }
       if (choice == 3)
       {
