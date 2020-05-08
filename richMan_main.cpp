@@ -33,6 +33,7 @@ int main(){
   int n = 36, round = 0, turn = 0;
   Block *mapBlocks = new Block[n];
   Status *players;
+  int *freeze;
   
   //display the main menu of the game
   choice = menu();
@@ -47,7 +48,6 @@ int main(){
     {
       createCharacters(players);
       createMap("save/default.txt", mapBlocks);//select single/multi game mode, create new Players and map
-      int *freeze = new int[playerNo]();
       save_temp(mapBlocks, players, playerNo, round, turn, mode, freeze);
       delete [] players;
       delete [] mapBlocks;
@@ -55,7 +55,6 @@ int main(){
     }
     case 2:
     {
-      int *freeze = new int[playerNo]();
       richMan_load(mapBlocks, players, playerNo, round, turn, mode, freeze);
       save_temp(mapBlocks, players, playerNo, round, turn, mode, freeze);
       delete [] players;
@@ -367,7 +366,7 @@ int menu(){
   return choice;
 }
 
-void createCharacters(Status *&players){
+void createCharacters(Status *&players, int *&freeze){
 
   cout << "1. Single Mode" << endl;
   cout << "2. MultiPlayer Mode" << endl;
@@ -382,6 +381,7 @@ void createCharacters(Status *&players){
     {
       playerNo = 4;
       players = new Status[playerNo];
+      freeze = new int[playerNo]();
       int * num = new int[3];
       string namelist[10] = {"SM", "SP", "Th", "Pa", "Ir", "Dk", "Me", "Ah", "CB", "BC"};
       srand(time(NULL));
@@ -418,6 +418,7 @@ void createCharacters(Status *&players){
       cin >> playerNo;
 
       players = new Status[playerNo];
+      freeze = new int[playerNo]();
       for (int i = 0; i < playerNo; i++)
       {
         cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
