@@ -157,7 +157,7 @@ int main(){
           if (players[i].cash <= 0)
           {
             cout << "## " << players[i].name << " bankrupted! ##" << endl;
-            richMan_bankrupt(players, playerNo, i);
+            richMan_bankrupt(players, mapBlocks, playerNo, i);
             if (i == 0){
               cout << "Byebye! You lost the game" << endl;
               endGame = true;
@@ -262,8 +262,7 @@ int main(){
           if (players[i].cash <= 0)
           {
             cout << "## " << players[i].name << " bankrupted! ##" << endl;
-            richMan_bankrupt(players, playerNo, i);
-            }
+            richMan_bankrupt(players, mapBlocks, playerNo, i);
           }
           i++;
         }
