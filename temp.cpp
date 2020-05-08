@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void save_temp(Block *mapBlocks, Status *players, int n, int round, int turn, int mode){
+void save_temp(Block *mapBlocks, Status *players, int n, int round, int turn, int mode, int *freeze){
   ofstream fout("temp.txt");
   if (fout.fail()) {
     //the error message to notify failed opening; (2) for exporting text
@@ -34,7 +34,18 @@ void save_temp(Block *mapBlocks, Status *players, int n, int round, int turn, in
         << players[j-36].position << endl;
     }
     else {
-      fout << round << " " << turn << " " << mode << endl;
+      fout << round << " " << turn << " " << mode ' ';
+      for (int i = 0; i < n; i++)
+      {
+        if (i != n-1)
+        {
+          fout << freeze[i] << ' ';
+        }
+        else
+        {
+          fout << freeze[i] << endl;
+        }
+      }
     }
     j++;
   }
