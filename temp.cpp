@@ -4,22 +4,9 @@
 #include <stdio.h>
 #include <string>
 #include "richMan_struct.h"
+#include "temp.h"
 
 using namespace std;
-
-struct Status{
-  string name;
-  int cash;
-  int property;
-  int position;
-};
-
-struct Block{
-  string name;
-  double price;
-  int Lv;
-  string ownership;
-};
 
 void save_temp(Block *mapBlocks, Status *players, int n, int round, int turn, int mode){
   ofstream fout("temp.txt");
@@ -54,7 +41,7 @@ void save_temp(Block *mapBlocks, Status *players, int n, int round, int turn, in
   fout.close();
 }
 
-void load_temp(Block *mapBlocks, Status *players, int n, int round, int turn, int mode) {
+void load_temp(struct Block *mapBlocks, struct Status *&players, int &playerNo, int &round, int &turn, int &mode) {
   string slot_name = "temp";
   string name;
   ifstream fin(slot_name+".txt"); //change the cmd when the name of directory changed
@@ -63,7 +50,6 @@ void load_temp(Block *mapBlocks, Status *players, int n, int round, int turn, in
     cout << "Error in the file opening!" << endl;
     exit(1);
   }
-  int j = 0;
   int j = 0;
   while (fin >> name) {
     if (j < 36){
