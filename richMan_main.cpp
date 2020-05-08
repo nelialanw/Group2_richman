@@ -57,6 +57,7 @@ int main(){
     {
       richMan_load(mapBlocks, players, playerNo, round, turn, mode, freeze);
       save_temp(mapBlocks, players, playerNo, round, turn, mode, freeze);
+      displayMap(mapBlocks, players, playerNo);
       delete [] players;
       delete [] mapBlocks;
       break;
