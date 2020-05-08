@@ -16,10 +16,10 @@ void mapEffect(int dice, int mode, int turn, Block *mapBoard, Status *players, i
   {
     //system("CLS");
     //displayMap(mapBoard, players, playerNo);
-    cout << "========================================================" << endl
+    cout << "=====================================================" << endl
     << "The dice number is " << dice << "  "
     << players[turn].name << " go to " << mapBoard[pos].name << endl
-    << "========================================================" << endl
+    << "=====================================================" << endl
     << "Cash: " << players[turn].cash << ' ' << "Property owned: " << players[turn].property << endl
     <<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 
