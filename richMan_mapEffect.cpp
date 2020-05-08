@@ -75,8 +75,13 @@ void mapEffect(int dice, int mode, int turn, Block *mapBoard, Status *players, i
         freeze[turn] = 2;
       }
     }
-    cout << endl << "Enter 0 to continue the game: ";
-    cin >> choice;
+    cout << endl;
+    while (choice != 0)
+    {
+      cout << "Enter 0 to continue the game: ";
+      cin >> choice;
+      cout << endl;
+    }
   }
 
   while (choice && mode == 1 && turn !=0)
