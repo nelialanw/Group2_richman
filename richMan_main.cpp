@@ -143,10 +143,11 @@ int main(){
             players[turn].position %= 36;
             players[turn].cash += 10000;
           }
-          mapEffect(diceNo, mode, turn, mapBlocks, players, playerNo, freeze);
+
           cout << "Round " << round+1 << "   " << players[turn].name << "\'s turn" << endl
-            << "~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
-            << "Cash: " << players[turn].cash << "  Property owned: " << players[turn].property
+            << "~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+          mapEffect(diceNo, mode, turn, mapBlocks, players, playerNo, freeze);
+          cout << "Cash: " << players[turn].cash << "  Property owned: " << players[turn].property
             << "  Position: " << mapBlocks[players[turn].position].name << endl
             << "=====================================================" << endl;
         }
