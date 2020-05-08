@@ -33,7 +33,6 @@ int main(){
   int n = 36, round = 0, turn = 0;
   Block *mapBlocks = new Block[n];
   Status *players;
-  int *freeze = new int[playerNo]();
   
   //display the main menu of the game
   choice = menu();
@@ -48,6 +47,7 @@ int main(){
     {
       createCharacters(players);
       createMap("save/default.txt", mapBlocks);//select single/multi game mode, create new Players and map
+      int *freeze = new int[playerNo]();
       save_temp(mapBlocks, players, playerNo, round, turn, mode, freeze);
       delete [] players;
       delete [] mapBlocks;
@@ -55,6 +55,7 @@ int main(){
     }
     case 2:
     {
+      int *freeze = new int[playerNo]();
       richMan_load(mapBlocks, players, playerNo, round, turn, mode, freeze);
       save_temp(mapBlocks, players, playerNo, round, turn, mode, freeze);
       delete [] players;
