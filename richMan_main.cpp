@@ -95,7 +95,7 @@ int main(){
     }
     if (turn!=0){
       choice = 1;
-      int diceNo = dice();
+      int diceNo = rand()%6+1;
       players[turn].position += diceNo;
       if (players[turn].position > 35)
       {
