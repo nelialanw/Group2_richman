@@ -96,7 +96,7 @@ int main(){
             displayMap(mapBlocks, players, playerNo);
           }
           cout << "Round " << round+1 << "   " << players[turn].name << "\'s turn" << endl
-            << "~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
+            << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
             << "Cash: " << players[turn].cash << "  Property owned: " << players[turn].property
             << "  Position: " << mapBlocks[players[turn].position].name << endl
             << "=====================================================" << endl
@@ -145,7 +145,7 @@ int main(){
           }
           cout << "=====================================================" << endl;
           cout << "Round " << round+1 << "   " << players[turn].name << "\'s turn" << endl
-            << "~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+            << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
           mapEffect(diceNo, mode, turn, mapBlocks, players, playerNo, freeze);
           cout << "Cash: " << players[turn].cash << "  Property owned: " << players[turn].property
             << "  Position: " << mapBlocks[players[turn].position].name << endl
@@ -204,7 +204,7 @@ int main(){
         displayMap(mapBlocks, players, playerNo);
       }
       cout << "Round " << round+1 << "   " << players[turn].name << "\'s turn" << endl
-      << "~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+      << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
       if (freeze[turn] != 0)
       {
         cout << "## You have to stay in " << mapBlocks[players[turn].position].name << " for " << freeze[turn]-1 << " more turn ##" << endl;
