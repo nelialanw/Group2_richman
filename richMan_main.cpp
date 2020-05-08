@@ -72,6 +72,9 @@ int main(){
     while (mode == 1)
     {
       static int choice;
+      Block *mapBlocks = new Block[n];
+      Status *players;
+      load_temp(mapBlocks, players, playerNo, round, turn, mode);
       if (freeze[turn] != 0)
       {
         cout << "## You have to stay in " << mapBlocks[players[turn].position].name << " for " << freeze[turn]-1 << " more turn ##" << endl;
@@ -86,7 +89,10 @@ int main(){
       else
       {
         if (turn == 0){
-          displayMap(mapBlocks, players, playerNo);
+          if (choice != 3)
+          {
+            displayMap(mapBlocks, players, playerNo);
+          }
           cout << "Round " << round+1 << "   " << players[turn].name << "\'s turn" << endl
             << "~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
             << "Cash: " << players[turn].cash << "  Property owned: " << players[turn].property
@@ -110,11 +116,13 @@ int main(){
           if (choice == 2)
           {
             richMan_load(mapBlocks, players, playerNo, round, turn, mode);
+            save_temp(mapBlocks, players, playerNo, round, turn, mode);
             break;
           }
           if (choice == 3)
           {
             richMan_save(mapBlocks, players, playerNo, round, turn, mode);
+            cout << "****Your save is successful****"<< endl;
             break;
           }
           if (choice == 4)
@@ -173,6 +181,9 @@ int main(){
         round++;
         turn = 0;
       }
+      save_temp(mapBlocks, players, playerNo, round, turn, mode);
+      delete [] players;
+      delete [] mapBlocks;
     }
 
     while (mode == 2)
@@ -182,8 +193,10 @@ int main(){
       Block *mapBlocks = new Block[n];
       Status *players;
       load_temp(mapBlocks, players, playerNo, round, turn, mode);
-
-      displayMap(mapBlocks, players, playerNo);
+      if (choice != 3)
+      {
+        displayMap(mapBlocks, players, playerNo);
+      }
       cout << "Round " << round+1 << "   " << players[turn].name << "\'s turn" << endl
       << "~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
       if (freeze[turn] != 0)
@@ -221,12 +234,14 @@ int main(){
         if (choice == 2)
         {
           richMan_load(mapBlocks, players, playerNo, round, turn, mode);
+          save_temp(mapBlocks, players, playerNo, round, turn, mode);
           break;
         }
         if (choice == 3)
         {
           //cout << "save round: " << round << ' ' << turn << endl;
           richMan_save(mapBlocks, players, playerNo, round, turn, mode);
+          cout << "****Your save is successful****"<< endl;
           break;
         }
         if (choice == 4)
@@ -235,10 +250,6 @@ int main(){
           endGame = true;
           break;
         }
-        /*if (choice == 5)
-        {
-          random_event("chance", players, 0);
-        }*/
         //system("CLS");
         int i = 0;
         while (i < playerNo)
