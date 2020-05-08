@@ -143,7 +143,7 @@ int main(){
             players[turn].position %= 36;
             players[turn].cash += 10000;
           }
-
+          cout << "=====================================================" << endl;
           cout << "Round " << round+1 << "   " << players[turn].name << "\'s turn" << endl
             << "~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
           mapEffect(diceNo, mode, turn, mapBlocks, players, playerNo, freeze);
