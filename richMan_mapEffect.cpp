@@ -12,7 +12,7 @@ using namespace std;
 void mapEffect(int dice, int mode, int turn, Block *mapBoard, Status *players, int playerNo, int *freeze){
   int choice = 1;
   int pos = players[turn].position;
-  while (choice && (mode ==1 || (mode == 2 && turn ==0)))
+  while (choice && (mode ==2 || (mode == 1 && turn ==0)))
   {
     //system("CLS");
     displayMap(mapBoard, players, playerNo);
@@ -79,7 +79,7 @@ void mapEffect(int dice, int mode, int turn, Block *mapBoard, Status *players, i
     cin >> choice;
   }
   
-  while (choice && mode == 2 && turn !=0)
+  while (choice && mode == 1 && turn !=0)
   {
     if (players[turn].cash > mapBoard[pos].price && mapBoard[pos].ownership == -1)
     {
