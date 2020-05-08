@@ -100,7 +100,7 @@ int main(){
             << "Cash: " << players[turn].cash << "  Property owned: " << players[turn].property
             << "  Position: " << mapBlocks[players[turn].position].name << endl
             << "=====================================================" << endl
-            <<"1. Roll dice  2. Load game 3. Save game 4. Quit" << endl
+            <<"1. Roll dice  2. Load 3. Save 4. Properties 5. Quit" << endl
             << "=====================================================" << endl
             << "Your choice: ";
           cin >> choice;
@@ -127,7 +127,16 @@ int main(){
             cout << "**** Your save is successful ****"<< endl;
             break;
           }
-          if (choice == 4)
+          if (choice ==4)
+          {
+            for (int i = 0; i < n; i++)
+            {
+              if (mapBlocks[i].ownership == turn) {cout << mapBlocks[i].name << " ";}
+            }
+            cout << endl;
+            break;
+          }
+          if (choice == 5)
           {
             cout << "Thank you for playing richMan!! Bye!!" << endl;
             endGame = true;
@@ -233,7 +242,7 @@ int main(){
         cout << "Cash: " << players[turn].cash << "  Property owned: " << players[turn].property
         << "  Position: " << mapBlocks[players[turn].position].name << endl
         << "=====================================================" << endl
-        <<"1. Roll dice  2. Load game 3. Save game 4. Quit" << endl
+        <<"1. Roll dice  2. Load 3. Save 4. Properties 5. Quit" << endl
         << "=====================================================" << endl
         << "Your choice: ";
         cin >> choice;
@@ -262,7 +271,16 @@ int main(){
           cout << "****Your save is successful****"<< endl;
           break;
         }
-        if (choice == 4)
+        if (choice ==4)
+        {
+          for (int i = 0; i < n; i++)
+          {
+            if (mapBlocks[i].ownership == turn) {cout << mapBlocks[i].name << " ";}
+          }
+          cout << endl;
+          break;
+        }
+        if (choice == 5)
         {
           cout << "Thank you for playing richMan!! Bye!!" << endl;
           endGame = true;
