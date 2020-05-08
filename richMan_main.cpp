@@ -169,6 +169,7 @@ int main(){
         }
         if (check_bankrupt > 0)
         {
+          save_temp(mapBlocks, players, playerNo, round, turn, mode);
           break;
         }
       }
@@ -280,6 +281,7 @@ int main(){
         }
         if (check_bankrupt>0)
         {
+          save_temp(mapBlocks, players, playerNo, round, turn, mode);
           break;
         }
         if (playerNo == 0)
