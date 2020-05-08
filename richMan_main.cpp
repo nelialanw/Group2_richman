@@ -109,7 +109,7 @@ int main(){
             if (players[turn].position > 35)
             {
               players[turn].position %= 36;
-              players[turn].cash += 50000;
+              players[turn].cash += 10000;
             }
             mapEffect(diceNo, mode, turn, mapBlocks, players, playerNo, freeze);
           }
@@ -139,7 +139,7 @@ int main(){
           if (players[turn].position > 35)
           {
             players[turn].position %= 36;
-            players[turn].cash += 50000;
+            players[turn].cash += 10000;
           }
           mapEffect(diceNo, mode, turn, mapBlocks, players, playerNo, freeze);
           cout << "Round " << round+1 << "   " << players[turn].name << "\'s turn" << endl
@@ -258,6 +258,10 @@ int main(){
           {
             cout << "## " << players[i].name << " bankrupted! ##" << endl;
             richMan_bankrupt(players, playerNo, i);
+            if (i == 0)
+            {
+              endGame = true;
+            }
           }
           i++;
         }
@@ -340,7 +344,7 @@ void createCharacters(Status *&players){
         else {
           players[i].name = namelist[num[i-1]]+"_AI";
         }
-        players[i].cash = 50000;
+        players[i].cash = 10000;
         players[i].property = 0;
         players[i].position = 0;
       }
@@ -361,7 +365,7 @@ void createCharacters(Status *&players){
         cout << "~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
         cout << "Please enter the name of player " << i+1 << ": ";
         cin >> players[i].name;
-        players[i].cash = 50000;
+        players[i].cash = 10000;
         players[i].property = 0;
         players[i].position = 0;
       }
