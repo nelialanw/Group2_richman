@@ -111,7 +111,7 @@ int main(){
             if (players[turn].position > 35)
             {
               players[turn].position %= 36;
-              players[turn].cash += 10000;
+              players[turn].cash += 5000;
             }
             mapEffect(diceNo, mode, turn, mapBlocks, players, playerNo, freeze);
           }
@@ -158,7 +158,7 @@ int main(){
           if (players[turn].position > 35)
           {
             players[turn].position %= 36;
-            players[turn].cash += 10000;
+            players[turn].cash += 5000;
           }
           cout << "=====================================================" << endl;
           cout << "Round " << round+1 << "   " << players[turn].name << "\'s turn" << endl
@@ -262,7 +262,7 @@ int main(){
           if (players[turn].position > 35)
           {
             players[turn].position %= 36;
-            players[turn].cash += 10000;
+            players[turn].cash += 5000;
           }
           mapEffect(diceNo, mode, turn, mapBlocks, players, playerNo, freeze);
         }
