@@ -16,7 +16,6 @@ void random_event(string event, struct Status *players, int player_code)
 {
   string result;
   int random_number, i=0;
-  srand(time(NULL));
   random_number = rand() %10;
   ifstream fin("event/" + event + ".txt");
   if (fin.fail()) {
