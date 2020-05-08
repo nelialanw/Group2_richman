@@ -47,7 +47,14 @@ void mapEffect(int dice, int mode, int turn, Block *mapBoard, Status *players, i
       {
         mapBoard[pos].Lv += 1;
         players[turn].cash -= mapBoard[pos].price*0.5;
-        mapBoard[pos].price *= 1.5;
+        if (mapBoard[pos].Lv >= 3)
+        {
+          mapBoard[pos].price *= 2;
+        }
+        else
+        {
+          mapBoard[pos].price *= 1.5;
+        }
         cout << "## Successfully upgrade " << mapBoard[pos].name << " to Lv: " << mapBoard[pos].Lv << " ##" << endl
         << "## Value of " << mapBoard[pos].name << " become $" << mapBoard[pos].price << " ##" << endl
         << "## Cash remaining: " << players[turn].cash << " ##" << endl;
