@@ -127,11 +127,19 @@ int main(){
             cout << "**** Your save is successful ****"<< endl;
             break;
           }
-          if (choice ==4)
+          if (choice == 4)
           {
+            bool noProperty = true;
             for (int i = 0; i < n; i++)
             {
-              if (mapBlocks[i].ownership == turn) {cout << mapBlocks[i].name << " ";}
+              if (mapBlocks[i].ownership == turn) {
+                cout << mapBlocks[i].name << " ";
+                noProperty = false;
+              }
+            }
+            if (noProperty)
+            {
+              cout << "## You don't have any property ##";
             }
             cout << endl;
             break;
@@ -271,11 +279,19 @@ int main(){
           cout << "****Your save is successful****"<< endl;
           break;
         }
-        if (choice ==4)
+        if (choice == 4)
         {
+          bool noProperty = true;
           for (int i = 0; i < n; i++)
           {
-            if (mapBlocks[i].ownership == turn) {cout << mapBlocks[i].name << " ";}
+            if (mapBlocks[i].ownership == turn) {
+              cout << mapBlocks[i].name << " ";
+              noProperty = false;
+            }
+          }
+          if (noProperty)
+          {
+            cout << "## You don't have any property ##";
           }
           cout << endl;
           break;
