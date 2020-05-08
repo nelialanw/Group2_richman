@@ -19,7 +19,7 @@ void rule()
   string line;
   while (getline(fin, line))
   {
-    cout << line << end;
+    cout << line << endl;
   }
   fin.close();
 
