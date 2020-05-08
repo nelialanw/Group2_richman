@@ -175,7 +175,7 @@ int main(){
           if (players[i].cash <= 0)
           {
             cout << "## " << players[i].name << " bankrupted! ##" << endl;
-            richMan_bankrupt(players, mapBlocks, playerNo, i);
+            richMan_bankrupt(players, mapBlocks, freeze, playerNo, i);
             if (i == 0){
               cout << "Byebye! You lost the game" << endl;
               endGame = true;
@@ -303,13 +303,13 @@ int main(){
           break;
         }
         //system("CLS");
-        int i = 0, check_bankrupt = 0;
+        int i = 0;
         while (i < playerNo)
         {
           if (players[i].cash <= 0)
           {
             cout << "## " << players[i].name << " bankrupted! ##" << endl;
-            richMan_bankrupt(players, mapBlocks, playerNo, i);
+            richMan_bankrupt(players, mapBlocks, freeze, playerNo, i);
             i--;
           }
           i++;
