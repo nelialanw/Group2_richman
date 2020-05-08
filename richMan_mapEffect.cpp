@@ -80,7 +80,6 @@ void mapEffect(int dice, int mode, int turn, Block *mapBoard, Status *players, i
     {
       cout << "Enter 0 to continue the game: ";
       cin >> choice;
-      cout << endl;
     }
   }
 
