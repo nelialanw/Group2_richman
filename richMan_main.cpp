@@ -69,9 +69,9 @@ int main(){
     {
       int diceNo = dice();
       players[turn].position += diceNo;
-      mapEffect(diceNo, turn, mapBlocks, players, playerNo);
       if (players[turn].position > 35)
         players[turn].position %= 36;
+      mapEffect(diceNo, turn, mapBlocks, players, playerNo);
     }
     if (choice == 3)
     {
