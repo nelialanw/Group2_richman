@@ -272,8 +272,6 @@ int menu(){
   cout << "Your choice: ";
   cin >> choice;
 
-  //system("CLS");
-
   return choice;
 }
 
@@ -284,8 +282,6 @@ void createCharacters(Status *&players){
   cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
   cout << "Your choice: ";
   cin >> mode;
-
-  system("CLS");
 
   switch (mode)
   {
