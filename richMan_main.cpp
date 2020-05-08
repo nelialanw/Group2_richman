@@ -212,10 +212,16 @@ int main(){
           }
           mapEffect(diceNo, mode, turn, mapBlocks, players, playerNo, freeze);
         }
+        if (choice == 2)
+        {
+          richMan_load(mapBlocks, players, playerNo, round, turn, mode);
+          break;
+        }
         if (choice == 3)
         {
-          cout << "save round: " << round << ' ' << turn << endl;
+          //cout << "save round: " << round << ' ' << turn << endl;
           richMan_save(mapBlocks, players, playerNo, round, turn, mode);
+          break;
         }
         /*if (choice == 5)
         {
