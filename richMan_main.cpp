@@ -93,7 +93,10 @@ int main(){
         //int diceNo = 4;
         players[turn].position += diceNo;
         if (players[turn].position > 35)
+        {
           players[turn].position %= 36;
+          players[turn].cash += 10000;
+        }
         mapEffect(diceNo, turn, mapBlocks, players, playerNo, freeze);
       }
       if (choice == 3)
