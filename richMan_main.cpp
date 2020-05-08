@@ -152,7 +152,7 @@ int main(){
             << "=====================================================" << endl;
         }
 
-        int i = 0, check_bankrupt = 0;
+        int i = 0;
         while (i < playerNo)
         {
           if (players[i].cash <= 0)
@@ -273,11 +273,6 @@ int main(){
             i--;
           }
           i++;
-        }
-        if (check_bankrupt>0)
-        {
-          save_temp(mapBlocks, players, playerNo, round, turn, mode);
-          break;
         }
         if (playerNo == 0)
         {
