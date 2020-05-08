@@ -1,4 +1,4 @@
-a -10000 9
+u -5000 9
 You have to pay a fine....and stay in jail for 3 rounds
 u 5000 18
 You get your $5000 insurance...But you have to stay into hospital for 2 rounds
