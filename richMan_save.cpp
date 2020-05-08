@@ -69,11 +69,11 @@ void richMan_save(Block *mapBlocks, Status *players, int n, int round, int turn,
       {
         if (i != n-1)
         {
-          cout << freeze[i] << ' ';
+          fout << freeze[i] << ' ';
         }
         else
         {
-          cout << freeze[i] << endl;
+          fout << freeze[i] << endl;
         }
       }
     }
