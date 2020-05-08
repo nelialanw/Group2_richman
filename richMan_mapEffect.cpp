@@ -85,8 +85,7 @@ void mapEffect(int dice, int mode, int turn, Block *mapBoard, Status *players, i
 
   while (choice && mode == 1 && turn !=0)
   {
-    cout << "========================================================" << endl
-    << "The dice number is " << dice << "  "
+    cout << "The dice number is " << dice << "  "
     << players[turn].name << " go to " << mapBoard[pos].name << endl
     << "Cash: " << players[turn].cash << ' ' << "Property owned: " << players[turn].property << endl
          << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
