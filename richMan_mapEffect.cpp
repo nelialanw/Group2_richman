@@ -9,6 +9,7 @@
 
 using namespace std;
 
+//triger different effect when player go to different block of the map
 void mapEffect(int dice, int mode, int turn, Block *mapBoard, Status *players, int playerNo, int *freeze){
   int choice = 1;
   int pos = players[turn].position;
@@ -89,7 +90,8 @@ void mapEffect(int dice, int mode, int turn, Block *mapBoard, Status *players, i
       cin >> choice;
     }
   }
-
+  
+//ai part
   while (choice && mode == 1 && turn !=0)
   {
     cout << "The dice number is " << dice << "  "
