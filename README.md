@@ -5,27 +5,27 @@ Wong Wing Lam (WongWingLam) u3568502@connect.hku.hk
 
 ## Code Requirements (1~5) features / functions
 1. Generation of random game sets or events
-1.1 Rolling dice for random move on the map
-1.2 Triggering random events function for status changes
-1.3 AI mode with random AI playing
+<br>1.1 Rolling dice for random move on the map
+<br>1.2 Triggering random events function for status changes
+<br>1.3 AI mode with random AI playing
 
 2. Data structures for storing game status
-2.1 struct mapBlocks array [] - for map info
-2.2 struct Status array [] - for players info
-2.3 string
-2.4 integers
-2.5 double
+<br>2.1 struct mapBlocks array [] - for map info
+<br>2.2 struct Status array [] - for players info
+<br>2.3 string
+<br>2.4 integers
+<br>2.5 double
 
 3. Dynamic memory management
-3.1 Players info - dynamic array
-3.2 Properties info - dynamicarray
-3.3 Freezing player at a round - dynamic array
+<br>3.1 Players info - dynamic array
+<br>3.2 Properties info - dynamicarray
+<br>3.3 Freezing player at a round - dynamic array
 
 4. File input/output (e.g., for loading/saving game status)
-4.1 Txt files for storing and loading game progress by players in the save folder
-4.2 temp.txt for storing immediate data at the end of rounds and loading immediate data when each round starts
+<br>4.1 Txt files for storing and loading game progress by players in the save folder
+<br>4.2 temp.txt for storing immediate data at the end of rounds and loading immediate data when each round starts
 
-<br>5. Program codes in multiple files
+5. Program codes in multiple files
 <br>5.1 richMan_main.cpp
 <br>5.2 richMan_load.cpp
 <br>5.3 richMan_save.cpp
@@ -38,22 +38,22 @@ Wong Wing Lam (WongWingLam) u3568502@connect.hku.hk
 <br>5.10 temp.cpp
 
 ## non-standard C/C++ libraries
-1. <sys/stat.h> - for file I/O in a directory
-2. <dirent.h> - for reading directories
-3. <fstream> - for file I/O
-4. <string>
-5. <sstream> - for stoi
-6. <iomanip> - for setw and display of game
-7. <cstdlib> - random events
-8. <time.h> - to get time for random function
+<br>1. <sys/stat.h> - for file I/O in a directory
+<br>2. <dirent.h> - for reading directories
+<br>3. <fstream> - for file I/O
+<br>4. <string>
+<br>5. <sstream> - for stoi
+<br>6. <iomanip> - for setw and display of game
+<br>7. <cstdlib> - random events
+<br>8. <time.h> - to get time for random function
   
 ## Compilation and execution instructions
 1. Downloaded all files
 2. execute Makefile in Terminal
-2.1 In terminal, go to the directory containing the files (type cd then the address)
-2.2 type "make clean"
-2.3 type "make richMan"
-2.4 type "./richMan"
+<br>2.1 In terminal, go to the directory containing the files (type cd then the address)
+<br>2.2 type "make clean"
+<br>2.3 type "make richMan"
+<br>2.4 type "./richMan"
 
 ## Game Discription
 This is a text-based game similar to Monopoly and we called it Richman.
