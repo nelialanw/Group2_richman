@@ -83,6 +83,7 @@ void load_temp(struct Block *mapBlocks, struct Status *&players, int &playerNo, 
       round = stoi(name);
       fin >> turn;
       fin >> mode;
+      freeze = new int[playerNo];
       for (int i = 0; i < playerNo; i++)
       {
         fin >> freeze[i];
