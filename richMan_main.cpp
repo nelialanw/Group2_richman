@@ -78,8 +78,14 @@ int main(){
     {
       static int choice;
       Block *mapBlocks = new Block[n];
-      Status *players;
+      //Status *players;
+      //int *freeze;
       load_temp(mapBlocks, players, playerNo, round, turn, mode, freeze);
+      cout << round << ' ' << turn << " playerno: " << playerNo << endl;
+      for (int f = 0; f < playerNo; f++)
+      {
+        cout << players[f].name << "  " << freeze[f] << endl;
+      }
       if (freeze[turn] != 0)
       {
         cout << "## " << players[turn].name << " have to stay in " << mapBlocks[players[turn].position].name << " for " << freeze[turn]-1 << " more turn ##" << endl;
@@ -119,6 +125,9 @@ int main(){
           {
             richMan_load(mapBlocks, players, playerNo, round, turn, mode, freeze);
             save_temp(mapBlocks, players, playerNo, round, turn, mode, freeze);
+            delete [] players;
+            delete [] mapBlocks;
+            delete [] freeze;
             displayMap(mapBlocks, players, playerNo);
             break;
           }
@@ -207,7 +216,7 @@ int main(){
           cin >> mode;
         }
       }
-      if (playerNo == 1 && endGame == true)
+      if (playerNo == 1)
       {
         endGame = true;
         cout << "## Congratulate " << players[0].name << " wins the game ##" << endl;
@@ -234,8 +243,14 @@ int main(){
       static int choice;
       //cout << "freeze: " << freeze[turn] << endl;
       Block *mapBlocks = new Block[n];
-      Status *players;
+      //Status *players;
+      //int *freeze;
       load_temp(mapBlocks, players, playerNo, round, turn, mode, freeze);
+      cout << round << ' ' << turn << " playerno: " << playerNo << endl;
+      for (int f = 0; f < playerNo; f++)
+      {
+        cout << players[f].name << "  " << freeze[f] << endl;
+      }
       cout << "Round " << round+1 << "   " << players[turn].name << "\'s turn" << endl
       << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
       if (freeze[turn] != 0)
@@ -275,6 +290,9 @@ int main(){
         {
           richMan_load(mapBlocks, players, playerNo, round, turn, mode, freeze);
           save_temp(mapBlocks, players, playerNo, round, turn, mode, freeze);
+          delete [] players;
+          delete [] mapBlocks;
+          delete [] freeze;
           displayMap(mapBlocks, players, playerNo);
           break;
         }
