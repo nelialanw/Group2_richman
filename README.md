@@ -1,7 +1,7 @@
 # Group2_richman
 #### Team Members:
-Li Chi Shing (nelialanw) u3571237@connect.hku.hk<br>
-Wong Wing Lam (WongWingLam) u3568502@connect.hku.hk
+Li Chi Shing (nelialanw) UID:3035712377   Email:u3571237@connect.hku.hk<br>
+Wong Wing Lam (WongWingLam) UID:3035685029   Email:u3568502@connect.hku.hk
 
 ## Code Requirements (1~5) features / functions
 1. Generation of random game sets or events
