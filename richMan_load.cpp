@@ -36,15 +36,12 @@ void richMan_load(struct Block *mapBlocks, struct Status *&players, int &playerN
   cout << "Which slot do you want to load? (Name of file)" << endl;
   string name;
   cin >> slot_name;
-  int check = 0;
   ifstream fin("save/"+slot_name+".txt"); //change the cmd when the name of directory changed
-  while (fin.fail()) {
+  if (fin.fail()) {
     //the error message to notify failed opening; (1) for importing text
-    cout << "Wrong file name!!! Please enter the correct slot name!!!" << endl;
-    cin >> slot_name;
-    fin.open("save/"+slot_name+".txt");
+    cout << "Error in the file opening!" << endl;
+    exit(1);
   }
-
   int j = 0;
   while (fin >> name) {
     if (j < 36){
@@ -66,6 +63,7 @@ void richMan_load(struct Block *mapBlocks, struct Status *&players, int &playerN
     else {
       round = stoi(name);
       fin >> turn >> mode;
+      freeze = new int[playerNo];
       for (int i = 0; i < playerNo; i++)
       {
         fin >> freeze[i];
