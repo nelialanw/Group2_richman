@@ -25,17 +25,17 @@ Wong Wing Lam (WongWingLam) u3568502@connect.hku.hk
 4.1 Txt files for storing and loading game progress by players in the save folder
 4.2 temp.txt for storing immediate data at the end of rounds and loading immediate data when each round starts
 
-5. Program codes in multiple files
-5.1 richMan_main.cpp
-5.2 richMan_load.cpp
-5.3 richMan_save.cpp
-5.4 richMan_struct.cpp
-5.5 richMan_randomevent.cpp
-5.6 richMan_mapEffect.cpp
-5.7 richMan_display.cpp
-5.8 richMan_rule.cpp
-5.9 richMan_bankrupt.cpp
-5.10 temp.cpp
+<br>5. Program codes in multiple files
+<br>5.1 richMan_main.cpp
+<br>5.2 richMan_load.cpp
+<br>5.3 richMan_save.cpp
+<br>5.4 richMan_struct.cpp
+<br>5.5 richMan_randomevent.cpp
+<br>5.6 richMan_mapEffect.cpp
+<br>5.7 richMan_display.cpp
+<br>5.8 richMan_rule.cpp
+<br>5.9 richMan_bankrupt.cpp
+<br>5.10 temp.cpp
 
 ## non-standard C/C++ libraries
 1. <sys/stat.h> - for file I/O in a directory
