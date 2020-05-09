@@ -10,6 +10,7 @@
 
 using namespace std;
 
+//pass by value
 void richMan_save(Block *mapBlocks, Status *players, int n, int round, int turn, int mode, int *freeze){
   string slot_name;
   DIR *dir = opendir("save");
@@ -23,7 +24,7 @@ void richMan_save(Block *mapBlocks, Status *players, int n, int round, int turn,
   }
   entry = readdir(dir);
 //(entry = readdir(dir)) != NULL
-  while ((entry = readdir(dir)) != NULL ){
+  while ((entry = readdir(dir)) != NULL ){ //to read the files in directories
     if ( entry->d_name[0] != '.'){
       string name = string(entry->d_name);
       name = name.erase(name.find(".txt"), 4);
@@ -41,7 +42,7 @@ void richMan_save(Block *mapBlocks, Status *players, int n, int round, int turn,
 
   cout << "Which slot do you want to overwrite? (Name of file)";
   cin >> slot_name;
-  ofstream fout("save/"+slot_name+".txt");
+  ofstream fout("save/"+slot_name+".txt"); //save to directory named save and tailored made file name
   if (fout.fail()) {
     //the error message to notify failed opening; (2) for exporting text
     cout << "Error in the file opening!" << endl;
