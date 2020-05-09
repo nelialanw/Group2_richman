@@ -34,7 +34,7 @@ int main(){
   Block *mapBlocks = new Block[n];
   Status *players;
   int *freeze;
-  
+
   //display the main menu of the game
   choice = menu();
   while (choice == 3)
@@ -51,6 +51,7 @@ int main(){
       save_temp(mapBlocks, players, playerNo, round, turn, mode, freeze);
       delete [] players;
       delete [] mapBlocks;
+      delete [] freeze;
       break;
     }
     case 2:
@@ -60,6 +61,7 @@ int main(){
       displayMap(mapBlocks, players, playerNo);
       delete [] players;
       delete [] mapBlocks;
+      delete [] freeze;
       break;
     }
     default:
@@ -223,6 +225,7 @@ int main(){
       save_temp(mapBlocks, players, playerNo, round, turn, mode, freeze);
       delete [] players;
       delete [] mapBlocks;
+      delete [] freeze;
     }
 
     while (mode == 2)
@@ -352,6 +355,7 @@ int main(){
       save_temp(mapBlocks, players, playerNo, round, turn, mode, freeze);
       delete [] players;
       delete [] mapBlocks;
+      delete [] freeze;
     }
   }
   return 0;
@@ -360,15 +364,15 @@ int main(){
 int menu(){
   int choice;
 
-  cout << "==================================" << endl
+  cout << "=====================================================" << endl
   << "*****     RichMan      *****" << endl
-  << "==================================" << endl
+  << "=====================================================" << endl
   << "Please Use Full Screen to Play" << endl
-  << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
+  << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
   << "1. Start a new game" << endl
   << "2. Load previous game" << endl
   << "3. Game rules" << endl
-  << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+  << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
   cout << "Your choice: ";
   cin >> choice;
 
