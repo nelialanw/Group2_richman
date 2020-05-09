@@ -10,6 +10,7 @@
 
 using namespace std;
 
+//Pass by reference to update the data in main and struct
 void richMan_load(struct Block *mapBlocks, struct Status *&players, int &playerNo, int &round, int &turn, int &mode, int *&freeze){
   string slot_name;
   char save[10] = "save";
@@ -23,11 +24,14 @@ void richMan_load(struct Block *mapBlocks, struct Status *&players, int &playerN
     return;
   }
   entry = readdir(dir);
-  while ((entry = readdir(dir)) != NULL ){
+  while ((entry = readdir(dir)) != NULL ){ //to read the files in directories
     if ( entry->d_name[0] != '.'){
       string name = string(entry->d_name);
       name = name.erase(name.find(".txt"), 4);
-      cout << name << endl;
+      if (name != "default" && name != "Template")
+      {
+        cout << name << endl;
+      }
       stat(name.c_str(), &info);
     }
   }
@@ -36,7 +40,7 @@ void richMan_load(struct Block *mapBlocks, struct Status *&players, int &playerN
   cout << "Which slot do you want to load? (Name of file)" << endl;
   string name;
   cin >> slot_name;
-  int check = 0;
+  int check = 0; 
   ifstream fin("save/"+slot_name+".txt"); //change the cmd when the name of directory changed
   while (fin.fail()) {
     //the error message to notify failed opening; (1) for importing text
