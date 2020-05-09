@@ -240,10 +240,11 @@ int main(){
       Block *mapBlocks = new Block[n];
       //Status *players;
       //int *freeze;
+      //load data from temp.txt
       load_temp(mapBlocks, players, playerNo, round, turn, mode, freeze);
       cout << "Round " << round+1 << "   " << players[turn].name << "\'s turn" << endl
       << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
-      if (freeze[turn] != 0)
+      if (freeze[turn] != 0) //the player need to stay in hospital or jail
       {
         cout << "## " << players[turn].name << " have to stay in " << mapBlocks[players[turn].position].name << " for " << freeze[turn]-1 << " more turn ##" << endl;
         freeze[turn] -= 1;
@@ -274,12 +275,12 @@ int main(){
             players[turn].position %= 36;
             players[turn].cash += 5000;
           }
-          mapEffect(diceNo, mode, turn, mapBlocks, players, playerNo, freeze);
+          mapEffect(diceNo, mode, turn, mapBlocks, players, playerNo, freeze); //trigger map effect when go to coooresponding place
         }
         if (choice == 2)
         {
           richMan_load(mapBlocks, players, playerNo, round, turn, mode, freeze);
-          save_temp(mapBlocks, players, playerNo, round, turn, mode, freeze);
+          save_temp(mapBlocks, players, playerNo, round, turn, mode, freeze); //save data to temp.txt
           displayMap(mapBlocks, players, playerNo);
           delete [] players;
           delete [] mapBlocks;
@@ -289,13 +290,13 @@ int main(){
         if (choice == 3)
         {
           //cout << "save round: " << round << ' ' << turn << endl;
-          richMan_save(mapBlocks, players, playerNo, round, turn, mode, freeze);
+          richMan_save(mapBlocks, players, playerNo, round, turn, mode, freeze); //save game
           cout << "****Your save is successful****"<< endl;
           break;
         }
         if (choice == 4)
         {
-          bool noProperty = true;
+          bool noProperty = true; //display property owned by the player
           for (int i = 0; i < n; i++)
           {
             if (mapBlocks[i].ownership == turn) {
@@ -312,7 +313,7 @@ int main(){
         }
         if (choice == 5)
         {
-          displayMap(mapBlocks, players, playerNo);
+          displayMap(mapBlocks, players, playerNo); //display the map
           break;
         }
         if (choice == 6)
@@ -328,7 +329,7 @@ int main(){
           if (players[i].cash <= 0)
           {
             cout << "## " << players[i].name << " bankrupted! ##" << endl;
-            richMan_bankrupt(players, mapBlocks, freeze, playerNo, i);
+            richMan_bankrupt(players, mapBlocks, freeze, playerNo, i); //bankrupt
             i--;
             turn--;
           }
@@ -370,7 +371,7 @@ int main(){
   return 0;
 }
 
-int menu(){
+int menu(){ //show the starting menu
   int choice;
 
   cout << "=====================================================" << endl
@@ -388,7 +389,7 @@ int menu(){
   return choice;
 }
 
-void createCharacters(Status *&players, int *&freeze){
+void createCharacters(Status *&players, int *&freeze){ //initial the player number and name
 
   cout << "1. Single Mode" << endl;
   cout << "2. MultiPlayer Mode" << endl;
@@ -460,7 +461,7 @@ void createCharacters(Status *&players, int *&freeze){
   return;
 }
 
-void createMap(string defaultMapFile, Block *&mapBlocks)
+void createMap(string defaultMapFile, Block *&mapBlocks) //load map data from defaultMapFile
 {
   ifstream fin;
 
@@ -490,7 +491,7 @@ void createMap(string defaultMapFile, Block *&mapBlocks)
   return;
 }
 
-int dice(){
+int dice(){ //return a random value
   int dice;
 
   srand(time(NULL));
