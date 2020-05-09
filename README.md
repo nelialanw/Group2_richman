@@ -2,6 +2,59 @@
 #### Team Members:
 Li Chi Shing (nelialanw) u3571237@connect.hku.hk<br>
 Wong Wing Lam (WongWingLam) u3568502@connect.hku.hk
+
+## Code Requirements (1~5) features / functions
+1. Generation of random game sets or events
+1.1 Rolling dice for random move on the map
+1.2 Triggering random events function for status changes
+1.3 AI mode with random AI playing
+
+2. Data structures for storing game status
+2.1 struct mapBlocks array [] - for map info
+2.2 struct Status array [] - for players info
+2.3 string
+2.4 integers
+2.5 double
+
+3. Dynamic memory management
+3.1 Players info - dynamic array
+3.2 Properties info - dynamicarray
+3.3 Freezing player at a round - dynamic array
+
+4. File input/output (e.g., for loading/saving game status)
+4.1 Txt files for storing and loading game progress by players in the save folder
+4.2 temp.txt for storing immediate data at the end of rounds and loading immediate data when each round starts
+
+5. Program codes in multiple files
+5.1 richMan_main.cpp
+5.2 richMan_load.cpp
+5.3 richMan_save.cpp
+5.4 richMan_struct.cpp
+5.5 richMan_randomevent.cpp
+5.6 richMan_mapEffect.cpp
+5.7 richMan_display.cpp
+5.8 richMan_rule.cpp
+5.9 richMan_bankrupt.cpp
+5.10 temp.cpp
+
+## non-standard C/C++ libraries
+1. <sys/stat.h> - for file I/O in a directory
+2. <dirent.h> - for reading directories
+3. <fstream> - for file I/O
+4. <string>
+5. <sstream> - for stoi
+6. <iomanip> - for setw and display of game
+7. <cstdlib> - random events
+8. <time.h> - to get time for random function
+  
+## Compilation and execution instructions
+1. Downloaded all files
+2. execute Makefile in Terminal
+2.1 In terminal, go to the directory containing the files (type cd then the address)
+2.2 type "make clean"
+2.3 type "make richMan"
+2.4 type "./richMan"
+
 ## Game Discription
 This is a text-based game similar to Monopoly and we called it Richman.
 Richman is single/multiple players game that can be played on command-line interface.
