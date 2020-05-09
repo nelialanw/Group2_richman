@@ -120,10 +120,10 @@ int main(){
           {
             richMan_load(mapBlocks, players, playerNo, round, turn, mode, freeze);
             save_temp(mapBlocks, players, playerNo, round, turn, mode, freeze);
+            displayMap(mapBlocks, players, playerNo);
             delete [] players;
             delete [] mapBlocks;
             delete [] freeze;
-            displayMap(mapBlocks, players, playerNo);
             break;
           }
           if (choice == 3)
@@ -280,10 +280,10 @@ int main(){
         {
           richMan_load(mapBlocks, players, playerNo, round, turn, mode, freeze);
           save_temp(mapBlocks, players, playerNo, round, turn, mode, freeze);
+          displayMap(mapBlocks, players, playerNo);
           delete [] players;
           delete [] mapBlocks;
           delete [] freeze;
-          displayMap(mapBlocks, players, playerNo);
           break;
         }
         if (choice == 3)
