@@ -8,6 +8,7 @@
 
 using namespace std;
 
+//bankrupt.cpp to remove the player from list and free the properties owned and the number of "freeze"
 void richMan_bankrupt(struct Status *&players, Block *mapBlocks, int *&freeze, int &playerNo, int player_bankrupt){
   int i = 0;
   for (int i = 0; i < 36; i++)
@@ -21,7 +22,7 @@ void richMan_bankrupt(struct Status *&players, Block *mapBlocks, int *&freeze, i
   {
     i++;
   }
-  cout << players[player_bankrupt].name << " is bankrupted!!" << endl;
+  cout << players[player_bankrupt].name << " is bankrupted!!" << endl; //notification for bankrupcy
   while (i<playerNo-1)
   {
     players[i] = players[i+1];
