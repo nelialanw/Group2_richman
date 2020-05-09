@@ -48,6 +48,7 @@ int main(){
     {
       createCharacters(players, freeze);
       createMap("save/default.txt", mapBlocks);//select single/multi game mode, create new Players and map
+      displayMap(mapBlocks, players, playerNo);
       save_temp(mapBlocks, players, playerNo, round, turn, mode, freeze);
       delete [] players;
       delete [] mapBlocks;
