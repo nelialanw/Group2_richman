@@ -8,6 +8,7 @@
 
 using namespace std;
 
+//save the argument into temp.txt
 void save_temp(Block *mapBlocks, Status *players, int n, int round, int turn, int mode, int *freeze){
   ofstream fout("temp.txt");
   if (fout.fail()) {
@@ -17,7 +18,7 @@ void save_temp(Block *mapBlocks, Status *players, int n, int round, int turn, in
   }
    int j = 0;
   while (j < 36+n+1) {
-    if (j <36) {
+    if (j <36) { //save the mapBlock
       fout << mapBlocks[j].name << " "
         << mapBlocks[j].price << " "
         << mapBlocks[j].Lv << " "
@@ -27,7 +28,7 @@ void save_temp(Block *mapBlocks, Status *players, int n, int round, int turn, in
       }
       fout << endl;
     }
-    else if (j > 35 && j < 36+n) {
+    else if (j > 35 && j < 36+n) {//save the name
       fout << players[j-36].name << " "
         << players[j-36].cash << " "
         << players[j-36].property << " "
@@ -52,6 +53,7 @@ void save_temp(Block *mapBlocks, Status *players, int n, int round, int turn, in
   fout.close();
 }
 
+//load the data from temp.txt
 void load_temp(struct Block *mapBlocks, struct Status *&players, int &playerNo, int &round, int &turn, int &mode, int *&freeze) {
   string slot_name = "temp";
   string name;
