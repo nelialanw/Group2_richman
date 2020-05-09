@@ -38,14 +38,14 @@ Wong Wing Lam (WongWingLam) u3568502@connect.hku.hk
 <br>5.10 temp.cpp
 
 ## non-standard C/C++ libraries
-<br>1. <sys/stat.h> - for file I/O in a directory
-<br>2. <dirent.h> - for reading directories
-<br>3. <fstream> - for file I/O
-<br>4. <string>
-<br>5. <sstream> - for stoi
-<br>6. <iomanip> - for setw and display of game
-<br>7. <cstdlib> - random events
-<br>8. <time.h> - to get time for random function
+<br>1. sys/stat.h - for file I/O in a directory
+<br>2. dirent.h - for reading directories
+<br>3. fstream - for file I/O
+<br>4. string>
+<br>5. sstream - for stoi
+<br>6. iomanip - for setw and display of game
+<br>7. cstdlib - random events
+<br>8. time.h - to get time for random function
   
 ## Compilation and execution instructions
 1. Downloaded all files
