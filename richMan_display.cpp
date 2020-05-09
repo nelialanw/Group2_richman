@@ -1,9 +1,12 @@
+//richMan_display.cpp
 #include <iostream>
 #include <string>
 #include <iomanip>
 #include "richMan_display.h"
 #include "richMan_struct.h"
 
+
+//display map when necessary
 using namespace std;
 
 void displayMap(Block *mapBlocks, Status *players, int playerNo){
@@ -73,6 +76,8 @@ void displayMap(Block *mapBlocks, Status *players, int playerNo){
     if (j == 1)
       break;
     int temp = playerNo;
+    
+    //display players info in this loop
     for (int i = 0; i < 8; i++)
     {
       cout << setfill('-') << setw(15) << '-' << setfill(' ') << setw(120) << ' ' << setfill('-') << setw(15) << '-' <<endl;
