@@ -27,7 +27,10 @@ void richMan_save(Block *mapBlocks, Status *players, int n, int round, int turn,
     if ( entry->d_name[0] != '.'){
       string name = string(entry->d_name);
       name = name.erase(name.find(".txt"), 4);
-      cout << name << endl;
+      if (name != "default" && name != "Template")
+      {
+        cout << name << endl;
+      }
       stat(name.c_str(), &info);
           /*if (S_ISDIR(info.st_mode)) {
             load_richman(save);
